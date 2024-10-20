@@ -11,7 +11,7 @@ else
 fi
 
 # run VulScan on provided ips
-echo Running VulScan...
+echo Running VulScan scans...
 while IFS= read -r line
 do
     # VulScan command
@@ -24,12 +24,17 @@ do
         echo $some_line >> /path/to/file
     fi
 done < ../ips.txt
+echo VulScan complete...
+
+# will we have to start spiderfoot and connect to server/cli?
 
 # run Spiderfoot on provided ips
+echo Running Spiderfoot scans...
 while IFS= read -r line
 do
     #put spiderfoot command here
 done < ../ips.txt
+echo Spiderfoot complete...
 
 
 
