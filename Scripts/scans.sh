@@ -1,7 +1,6 @@
 #!/bin/bash
 # runs VulScan vulnerability scans
 # outputs them to ScanResults folder
-# please create a file named ips.txt so the script can pull target ips from it
 
 currentDate=$(date '+%Y-%m-%d')
 
@@ -18,7 +17,7 @@ echo Running VulScan scans...
 while IFS= read -r line
 do
     # VulScan command
-    nmap -sV --script=vulscan/vulscan.nse --script-args vulscanoutput='{id} | {title} | {matches} matches | Product: {product} | Version: {version} | Link: {link}\n' $line
+    nmap -sV --script=vulscan/vulscan.nse --script-args='vulscanoutput="{id} | {title} | {matches} matches | Product: {product} | Version: {version} | Link: {link}\n"' $line
 
     # check if output file exists for the current data. Create if it doesnt or append to it
     if [ ! -e ../ScanResults/$currentDate.csv ]; then
@@ -26,10 +25,8 @@ do
     else
         echo $line >> ../ScanResults/$currentDate.csv
     fi
-done < ../ips.txt
+done < ips.txt
 echo VulScan complete...
-
-
 
 # --setup for Linux vm -- input in terminal
 # create/edit file: sudo crontab -e
