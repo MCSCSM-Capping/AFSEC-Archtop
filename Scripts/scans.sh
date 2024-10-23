@@ -1,9 +1,11 @@
 #!/bin/bash
-# runs VulScan and Spiderfoot vulnerability scans
+# runs VulScan vulnerability scans
 # outputs them to ScanResults folder
 
+currentDate=$(date '+%Y-%m-%d')
+
 # check if directory is created
-if [ ! -d "../ScanResults" ] then
+if [ ! -d "../ScanResults" ]; then
     mkdir ../ScanResults   # create directory
     echo Created directory...
 else
@@ -18,23 +20,13 @@ do
     nmap -sV --script=vulscan/vulscan.nse --script-args vulscanoutput='{id} | {title} | {matches} matches | Product: {product} | Version: {version} | Link: {link}\n' $line
 
     # check if output file exists for the current data. Create if it doesnt or append to it
-    if [ ! -e /path/to/file ]; then
-        echo $some_line > /path/to/file
+    if [ ! -e ../ScanResults/$currentDate.csv ]; then
+        echo $line > ../ScanResults/$currentDate.csv
     else
-        echo $some_line >> /path/to/file
+        echo $line >> ../ScanResults/$currentDate.csv
     fi
 done < ../ips.txt
 echo VulScan complete...
-
-# will we have to start spiderfoot and connect to server/cli?
-
-# run Spiderfoot on provided ips
-echo Running Spiderfoot scans...
-while IFS= read -r line
-do
-    #put spiderfoot command here
-done < ../ips.txt
-echo Spiderfoot complete...
 
 
 
