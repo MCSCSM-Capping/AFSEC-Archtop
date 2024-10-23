@@ -1,6 +1,7 @@
 #!/bin/bash
 # runs VulScan vulnerability scans
 # outputs them to ScanResults folder
+# please create a file named ips.txt so the script can pull target ips from it
 
 currentDate=$(date '+%Y-%m-%d')
 
