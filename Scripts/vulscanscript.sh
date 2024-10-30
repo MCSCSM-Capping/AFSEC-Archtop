@@ -24,6 +24,7 @@ while read -r ip; do
     OUTPUT_FILE="$OUTPUT_DIR/${ip}.xml"
 
     #for each ip run vulscan and output the results to its specific file
-    sudo nmap  --script-args vulscanoutput=details --script=vulscan/vulscan.nse -sV -p- "$ip" -oX "$OUTPUT_FILE"
+    sudo nmap --script-args='vulscandb=cve.csv,vulscanoutput="ID: {id} - Title: {title} - Link: {link} ({matches})\n"' --script=vulscan/vulscan.nse -sV -p- "$ip" -oX "$OUTPUT_FILE"
+
 done < "$IP_FILE"
 echo scanning complete...
