@@ -11,7 +11,6 @@ CREATE TABLE vulscan_data (
     version VARCHAR,
     cve_id VARCHAR,
     cve_title VARCHAR,
-    cve_link VARCHAR,
     matches VARCHAR,
 );
 
