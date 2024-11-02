@@ -1,6 +1,5 @@
 -- Create Table to hold VulScan Data
 CREATE TABLE vulscan_data (
-    id VARCHAR,
     ip VARCHAR,
     host VARCHAR,
     os VARCHAR,
@@ -11,7 +10,6 @@ CREATE TABLE vulscan_data (
     version VARCHAR,
     cve_id VARCHAR,
     cve_title VARCHAR,
-    matches VARCHAR,
 );
 
 -- Import Data form csv into DB
