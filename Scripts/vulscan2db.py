@@ -4,7 +4,6 @@
 
 import os
 from datetime import date
-import csv
 import re
 
 
@@ -14,6 +13,7 @@ def main():
     user = "postgres"   # postgresql user
     db = "afsec"    # postgresql database
     table = "vulscan_data"  # postgresql table
+    regexString = 'asdf=5;(.*)123jasd'
 
     # go through each csv file in todays results directory
     print("Starting move...")
@@ -21,18 +21,24 @@ def main():
         filename = os.fsdecode(file)    # name of current file
         filepath = os.path.join(csv_dir, filename)  # grab file path
         with open(filepath, 'r') as csv_file:   # open it
-            for line in (csv_file):   # read line by line
-                # grab ip, host, os, protocol, port, state, service, version (row: 2)
-                if line == 1:
-                    line.split(",")
-                    cev_ip=line[0]
-                    cev_host=line[1]
-                    cev_os=line[2]
-                    cev_protocol=line[3]
-                    cev_port=line[4]
-                    cev_service=line[5]
-                    cev_product=line[6]
-                    print(cev_ip)
+            for i, line in enumerate(csv_file):    # read line by line
+                # grab ip, host, os, protocol, port, state, service, version (row: 2) 
+                if i == 1:
+                    # split headers line up by commas and extract necessary values
+                    headers = line.split(',')
+                    cev_ip=headers[0]
+                    cev_host=headers[1]
+                    cev_os=headers[2]
+                    cev_protocol=headers[3]
+                    cev_port=headers[4]
+                    cev_service=headers[5]
+                    cev_product=headers[6]
+                    print(cev_ip, cev_host, cev_os, cev_protocol, cev_port, cev_service, cev_product)
+                # parse cve from line 3 until a blank line
+                elif i >= 2 and line:
+                    result = re.search(regexString, line)
+                    cev_id = result.group(1)
+                    cev_title = result.group(2)
     print("Done...")
         
 # start script
