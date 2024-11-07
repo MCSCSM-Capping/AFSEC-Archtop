@@ -13,7 +13,8 @@ def main():
     user = "postgres"   # postgresql user
     db = "afsec"    # postgresql database
     table = "vulscan_data"  # postgresql table
-    regexString = 'asdf=5;(.*)123jasd'
+    id_pattern = r"ID:(.*)- Title:"
+    title_pattern = r"Title:(.*)- Link:"
 
     # go through each csv file in todays results directory
     print("Starting move...")
@@ -36,9 +37,13 @@ def main():
                     print(cev_ip, cev_host, cev_os, cev_protocol, cev_port, cev_service, cev_product)
                 # parse cve from line 3 until a blank line
                 elif i >= 2 and line:
-                    result = re.search(regexString, line)
-                    cev_id = result.group(1)
-                    cev_title = result.group(2)
+                    id_match = re.search(id_pattern, line)
+                    title_match = re.search(title_pattern, line)
+                    if id_match and title_match:
+                        cev_id = id_match.group(1).strip()
+                        cev_title = title_match.group(1).strip()
+                        print(cev_id, cev_title)
+                    
     print("Done...")
         
 # start script
