@@ -1,0 +1,11 @@
+{
+  "name": "pg-api",
+  "version": "1.0.0",
+  "description": "Directory for the Express.js API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
