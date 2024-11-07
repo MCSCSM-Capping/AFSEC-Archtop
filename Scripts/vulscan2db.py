@@ -5,6 +5,7 @@
 import os
 from datetime import date
 import re
+import psycopg2
 
 
 def main():
@@ -15,6 +16,13 @@ def main():
     table = "vulscan_data"  # postgresql table
     id_pattern = r"ID:(.*)- Title:"
     title_pattern = r"Title:(.*)- Link:"
+
+    # connect to the postgresql db
+    conn = psycopg2.connect(database=db,
+                        host="db_host",
+                        user=user,
+                        port="5432")
+    cursor = conn.cursor()
 
     # go through each csv file in todays results directory
     print("Starting move...")
@@ -34,7 +42,6 @@ def main():
                     cev_port=headers[4]
                     cev_service=headers[5]
                     cev_product=headers[6]
-                    print(cev_ip, cev_host, cev_os, cev_protocol, cev_port, cev_service, cev_product)
                 # parse cve from line 3 until a blank line
                 elif i >= 2 and line:
                     id_match = re.search(id_pattern, line)
@@ -42,9 +49,16 @@ def main():
                     if id_match and title_match:
                         cev_id = id_match.group(1).strip()
                         cev_title = title_match.group(1).strip()
-                        print(cev_id, cev_title)
+                       # postgresql query with placeholders
+                        insert_query = """
+                            INSERT INTO vulscan_data (ip, host, os, protocol, port, service, product, cve_id, cve_title)
+                            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s);
+                        """
+                        # execute the query
+                        cursor.execute(insert_query, (cev_ip, cev_host, cev_os, cev_protocol, cev_port, cev_service, cev_product, cev_id, cev_title))
                     
     print("Done...")
+    conn.close()
         
 # start script
 if __name__ == "__main__":
