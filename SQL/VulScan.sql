@@ -5,15 +5,8 @@ CREATE TABLE vulscan_data (
     os VARCHAR,
     protocol VARCHAR,
     port VARCHAR,
-    state VARCHAR,
     service VARCHAR,
-    version VARCHAR,
-    cve_id VARCHAR,
-    cve_title VARCHAR,
+    product VARCHAR,
+    id VARCHAR,
+    title VARCHAR,
 );
-
--- Import Data form csv into DB
-COPY vulscan_data()
-FROM '' 
-DELIMITER ',' 
-CSV HEADER;
