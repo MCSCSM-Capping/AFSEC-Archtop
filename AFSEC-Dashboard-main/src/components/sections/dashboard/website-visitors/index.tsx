@@ -5,7 +5,7 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import EChartsReactCore from 'echarts-for-react/lib/core';
 import VisitorsChartLegends from './VisitorsChartLegends';
-import VisitorsChart from './VisitorsChart';
+import TotalCVEChart from './TotalCVEsChart';
 
 const WebsiteVisitors = () => {
   const chartRef = useRef<EChartsReactCore>(null);
@@ -20,7 +20,7 @@ const WebsiteVisitors = () => {
       </Stack>
 
       {/* polar bar chart */}
-      <VisitorsChart chartRef={chartRef} />
+      <TotalCVEChart chartRef={chartRef} />
 
       {/* legends */}
       <VisitorsChartLegends chartRef={chartRef} />
