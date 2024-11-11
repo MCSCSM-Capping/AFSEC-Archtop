@@ -9,6 +9,7 @@ import psycopg2
 
 
 def main():
+    print("test")
     cur_date = date.today().isoformat()
     csv_dir = f"/home/developer/vulscan/vulscan-results/{cur_date}" # path to output folder for scan results
     user = "postgres"   # postgresql user
@@ -51,6 +52,9 @@ def main():
 
         conn.commit()
 
-        cursor.close()
+    cursor.close()
 
 
+# start script
+if __name__ == "__main__":
+    main()
