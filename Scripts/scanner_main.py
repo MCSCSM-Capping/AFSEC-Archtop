@@ -17,7 +17,7 @@ def main():
     table = "vulscan_data"  # postgresql table
     id_pattern = r"ID:(.*)- Title:"
     title_pattern = r"Title:(.*)- Link:"
-    scaner = ""
+    scanner = ""
     scan_source = ""
     scan_date = ""
     scan_info = ""
@@ -36,6 +36,7 @@ def main():
 
     data = cursor.fetchall()
 
+    print("Starting move...")
     for row in data:
         # either vulscan or spiderfoot
         scanner = "Vulscan"
@@ -53,6 +54,8 @@ def main():
         conn.commit()
 
     cursor.close()
+
+    print("Done...")
 
 
 # start script
