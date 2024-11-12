@@ -19,7 +19,7 @@ interface LegendProps {
   handleToggleLegend: (e: React.MouseEvent<HTMLButtonElement>, type: string | null) => void;
 }
 
-const VisitorsChartLegend = ({ data, toggleColor, handleToggleLegend }: LegendProps) => {
+const TotalCVELegend = ({ data, toggleColor, handleToggleLegend }: LegendProps) => {
   let color = '';
 
   if (toggleColor.Critical && data.type === 'Critical') {
@@ -51,4 +51,4 @@ const VisitorsChartLegend = ({ data, toggleColor, handleToggleLegend }: LegendPr
   );
 };
 
-export default VisitorsChartLegend;
+export default TotalCVELegend;

@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useTheme } from '@mui/material';
 import Stack from '@mui/material/Stack';
-import VisitorsChartLegend from './VisitorsChartLegend';
+import TotalCVELegend from './TotalCVELegend';
 import EChartsReactCore from 'echarts-for-react/lib/core';
 
 interface LegendsProps {
   chartRef: React.RefObject<EChartsReactCore>;
 }
 
+// Total CVE data/values in the Total CVEs %'s
 export const legendsData = [
   {
     id: 1,
@@ -31,7 +32,7 @@ export const legendsData = [
   },
 ];
 
-const VisitorsChartLegends = ({ chartRef }: LegendsProps) => {
+const TotalCVELegends = ({ chartRef }: LegendsProps) => {
   const theme = useTheme();
   const [toggleColor, setToggleColor] = useState({
     Critical: true,
@@ -118,7 +119,7 @@ const VisitorsChartLegends = ({ chartRef }: LegendsProps) => {
   return (
     <Stack mt={-1} spacing={1.5} direction="column">
       {legendsData.map((item) => (
-        <VisitorsChartLegend
+        <TotalCVELegend
           key={item.id}
           data={item}
           toggleColor={toggleColor}
@@ -129,4 +130,4 @@ const VisitorsChartLegends = ({ chartRef }: LegendsProps) => {
   );
 };
 
-export default VisitorsChartLegends;
+export default TotalCVELegends;
