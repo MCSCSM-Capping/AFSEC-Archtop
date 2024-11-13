@@ -18,10 +18,11 @@ def main():
     title_pattern = r"Title:(.*)- Link:"
 
     # connect to the postgresql db
-    conn = psycopg2.connect(database=db,
-                        host="db_host",
-                        user=user,
-                        port="5432")
+    conn = psycopg2.connect(database = db,
+                        user = user,
+                        password = "capping2024",
+                        host = "localhost",
+                        port = "5432")
     cursor = conn.cursor()
 
     # go through each csv file in todays results directory
@@ -35,13 +36,13 @@ def main():
                 if i == 1:
                     # split headers line up by commas and extract necessary values
                     headers = line.split(',')
-                    cev_ip=headers[0]
-                    cev_host=headers[1]
-                    cev_os=headers[2]
-                    cev_protocol=headers[3]
-                    cev_port=headers[4]
-                    cev_service=headers[5]
-                    cev_product=headers[6]
+                    cev_ip=headers[0].strip()
+                    cev_host=headers[1].strip()
+                    cev_os=headers[2].strip()
+                    cev_protocol=headers[3].strip()
+                    cev_port=headers[4].strip()
+                    cev_service=headers[5].strip()
+                    cev_product=headers[6].strip()
                 # parse cve from line 3 until a blank line
                 elif i >= 2 and line:
                     id_match = re.search(id_pattern, line)
@@ -51,12 +52,12 @@ def main():
                         cev_title = title_match.group(1).strip()
                        # postgresql query with placeholders
                         insert_query = """
-                            INSERT INTO vulscan_data (ip, host, os, protocol, port, service, product, cve_id, cve_title)
-                            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s);
+                            INSERT INTO vulscan_data (ip, host, os, protocol, port, service, product, id, title, scan_date)
+                            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s);
                         """
                         # execute the query
-                        cursor.execute(insert_query, (cev_ip, cev_host, cev_os, cev_protocol, cev_port, cev_service, cev_product, cev_id, cev_title))
-                    
+                        cursor.execute(insert_query, (cev_ip, cev_host, cev_os, cev_protocol, cev_port, cev_service, cev_product, cev_id, cev_title, cur_date))
+            conn.commit()
     print("Done...")
     conn.close()
         

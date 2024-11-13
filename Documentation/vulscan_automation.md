@@ -1,7 +1,7 @@
 
 # Vulscan Automation
 
-This procedure will explain how to create and automate daily scans for a given list of IP addresses using Vulscan. This documentation will be extremely similar to SpiderFoot, however we will not be using Docker for this implementation. The scans are currently scheduled to run every day at **2:00 AM** and the results will be output as XML files to the vulscan-results directory.
+This procedure will explain how to create and automate daily scans for a given list of IP addresses using Vulscan. This documentation will be extremely similar to SpiderFoot, however we will not be using Docker for this implementation. The scans are currently scheduled to run every day at **2:00 AM** and the results will be output as CSV files to the vulscan-results directory.
 
 ## Step 1: Prepare the List of IPs
 
@@ -49,7 +49,10 @@ while read -r ip; do
     OUTPUT_FILE="$OUTPUT_DIR/${ip}.xml"
 
     #for each ip run vulscan and output the results to its specific file
-    sudo nmap  --script-args vulscanoutput=details --script=vulscan/vulscan.nse -sV -p- "$ip" -oX "$OUTPUT_FILE"
+    sudo nmap --script-args='vulscandb=cve.csv,vulscanoutput="ID: {id} - Title: {title} - Link: {link} ({matches})\n"' --script=vulscan/vulscan.nse -sV -p- "$ip" -oX "$OUTPUT_FILE"
+    sudo python3 /home/developer/Nmap-XML-to-CSV/xml2csv.py -f "$OUTPUT_FILE" -csv "$OUTPUT_DIR/${ip}.csv"
+    sudo rm "$OUTPUT_FILE"
+
 done < "$IP_FILE"
 echo scanning complete...
 ```
@@ -57,7 +60,7 @@ echo scanning complete...
 This script:
 - Reads IP addresses from `/home/developer/ips.txt`.
 - Runs Vulscan for each IP address.
-- Saves the scan results in `/home/developer/vulscan/vulscan-results` as XML files.
+- Saves the scan results in `/home/developer/vulscan/vulscan-results` as CSV files.
 
 ### Step 3: Make the Script Executable
 Make the shell script executable with the following command:
@@ -95,4 +98,4 @@ Check the cron logs using the syslog:
 ```bash
 grep CRON /var/log/syslog
 ```
-By following these steps, you will have Vulscan automatically scan your list of IP addresses daily and store the results in XML files.
+By following these steps, you will have Vulscan automatically scan your list of IP addresses daily and store the results in CSV files.

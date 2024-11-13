@@ -4,10 +4,10 @@ import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import EChartsReactCore from 'echarts-for-react/lib/core';
-import VisitorsChartLegends from './VisitorsChartLegends';
-import VisitorsChart from './VisitorsChart';
+import TotalCVELegends from './TotalCVELegends';
+import TotalCVEChart from './TotalCVEsChart';
 
-const WebsiteVisitors = () => {
+const TotalCVEs = () => {
   const chartRef = useRef<EChartsReactCore>(null);
 
   return (
@@ -20,12 +20,12 @@ const WebsiteVisitors = () => {
       </Stack>
 
       {/* polar bar chart */}
-      <VisitorsChart chartRef={chartRef} />
+      <TotalCVEChart chartRef={chartRef} />
 
       {/* legends */}
-      <VisitorsChartLegends chartRef={chartRef} />
+      <TotalCVELegends chartRef={chartRef} />
     </Paper>
   );
 };
 
-export default WebsiteVisitors;
+export default TotalCVEs;

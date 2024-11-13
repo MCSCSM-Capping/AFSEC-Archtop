@@ -9,4 +9,5 @@ CREATE TABLE vulscan_data (
     product VARCHAR,
     id VARCHAR,
     title VARCHAR,
+    scan_date DATE
 );

@@ -1,16 +1,13 @@
 -- Create Table to hold Spiderfoot Data
 CREATE TABLE spiderfoot_data (
-    scan_name VARCHAR,
-    updated VARCHAR,
+    generated VARCHAR,
     type VARCHAR,
-    module VARCHAR,
-    source VARCHAR,
-    fp VARCHAR,
     data VARCHAR
 );
 
+
 -- Import Data form csv into DB
-COPY spiderfoot_data(scan_name, updated, type, module, source, fp, data)
+COPY spiderfoot_data(generated, type, data)
 FROM '' 
 DELIMITER ',' 
 CSV HEADER;

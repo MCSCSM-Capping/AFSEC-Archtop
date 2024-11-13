@@ -15,7 +15,8 @@ interface PolarBarChartProps {
   sx?: SxProps;
 }
 
-const VisitorsChart = ({ chartRef, ...rest }: PolarBarChartProps) => {
+//Total CVEs circular chart
+const TotalCVEChart = ({ chartRef, ...rest }: PolarBarChartProps) => {
   const theme = useTheme();
 
   const option = useMemo(
@@ -48,6 +49,7 @@ const VisitorsChart = ({ chartRef, ...rest }: PolarBarChartProps) => {
       series: [
         {
           type: 'bar',
+          //Alters the data/values of the table/graph
           data: [
             {
               type: 'Low',
@@ -107,4 +109,4 @@ const VisitorsChart = ({ chartRef, ...rest }: PolarBarChartProps) => {
   return <ReactEchart ref={chartRef} echarts={echarts} option={option} {...rest} />;
 };
 
-export default VisitorsChart;
+export default TotalCVEChart;
