@@ -34,6 +34,16 @@ app.get('/test-db', async (req, res) => {
     }
   });
 
+app.get('/api/main_table', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT * FROM main_table');
+    res.json(result.rows);  // Send all rows as JSON response
+  } catch (error) {
+    console.error('Error fetching data from main_table:', error);
+    res.status(500).json({ message: 'Error fetching data' });
+  }
+});
+
   
 app.listen(port, () => {
     console.log(`App running on port ${port}.`)
