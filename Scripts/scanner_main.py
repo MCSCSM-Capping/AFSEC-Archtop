@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
 
 # goes through the scanner tables and gets the info from those tables and adds it to the main table of the dashboard to interact with
-from datetime import date
 import psycopg2
 
 
 def main():
-    cur_date = date.today().isoformat()
     user = "postgres"   # postgresql user
     db = "afsec"    # postgresql database
     scanner = "" # the scanner we are getting the info from 
@@ -65,11 +63,11 @@ def main():
         # either vulscan or spiderfoot
         scanner = "Spiderfoot"
         # spiderfoot:
-        scan_source = 
+        scan_source = row[3]
         # spiderfoot:
-        scan_date = cur_date
+        scan_date = row[4]
         # spiderfoot:
-        scan_info = 
+        scan_info = row[0] + " : " + row[1] + " : " + row[2]
 
         # the new insert query to insert the data into the main table
         insert_query = """INSERT INTO main_table (scanner, scan_source, scan_date, scan_info) VALUES (%s, %s, %s, %s);"""
