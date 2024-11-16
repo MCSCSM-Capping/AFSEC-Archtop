@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { format } from 'date-fns';
-import { ordersStatusData } from 'data/ordersStatusData';
+import { scannerData } from 'data/scannerData';
 import { SelectChangeEvent } from '@mui/material';
 import Stack from '@mui/material/Stack';
 import Select from '@mui/material/Select';
@@ -28,9 +28,9 @@ interface OrdersStatusTableProps {
   searchText: string;
 }
 
-const OrdersStatusTable = ({ searchText }: OrdersStatusTableProps) => {
+const CVETable = ({ searchText }: OrdersStatusTableProps) => {
   const apiRef = useGridApiRef<GridApi>();
-  const [rows, setRows] = useState(ordersStatusData);
+  const [rows, setRows] = useState(scannerData);
   const [rowModesModel, setRowModesModel] = useState<GridRowModesModel>({});
 
   useEffect(() => {
@@ -77,17 +77,20 @@ const OrdersStatusTable = ({ searchText }: OrdersStatusTableProps) => {
     setRowModesModel(newRowModesModel);
   };
 
+  // Data and some formatting for the scanner table
   const columns: GridColDef[] = [
+    // IP found
     {
       field: 'id',
-      headerName: 'Order',
+      headerName: 'IP Address',
       minWidth: 80,
       flex: 1,
       resizable: false,
     },
+    // CVE found
     {
-      field: 'client',
-      headerName: 'Client',
+      field: 'cve',
+      headerName: 'CVE',
       flex: 2,
       minWidth: 180,
       resizable: false,
@@ -95,27 +98,28 @@ const OrdersStatusTable = ({ searchText }: OrdersStatusTableProps) => {
         <Stack alignItems="center" gap={0.75}>
           <IconifyIcon icon="mingcute:user-2-fill" color="neutral.main" fontSize="body2.fontSize" />
           <Typography variant="caption" mt={0.25} letterSpacing={0.5}>
-            Client
+          CVE
           </Typography>
         </Stack>
       ),
-      valueGetter: (params: { name: string; email: string }) => {
-        return `${params.name} ${params.email}`;
+      valueGetter: (params: { name: string; description: string }) => {
+        return `${params.name} ${params.description}`;
       },
       renderCell: (params) => {
         return (
           <Stack direction="column" alignSelf="center" justifyContent="center" sx={{ height: 1 }}>
             <Typography variant="subtitle1" fontSize="caption.fontSize">
-              {params.row.client.name}
+              {params.row.cve.name}
             </Typography>
             <Typography variant="subtitle2" color="text.secondary" fontSize="caption.fontSize">
-              {params.row.client.email}
+              {params.row.cve.description}
             </Typography>
           </Stack>
         );
       },
       sortComparator: (v1, v2) => v1.localeCompare(v2),
     },
+    // Date CVE was found
     {
       field: 'date',
       type: 'date',
@@ -134,6 +138,7 @@ const OrdersStatusTable = ({ searchText }: OrdersStatusTableProps) => {
       ),
       renderCell: (params) => format(new Date(params.value), 'MMM dd, yyyy'),
     },
+    // Status of the CVE
     {
       field: 'status',
       headerName: 'Status',
@@ -312,4 +317,4 @@ const OrdersStatusTable = ({ searchText }: OrdersStatusTableProps) => {
   );
 };
 
-export default OrdersStatusTable;
+export default CVETable;

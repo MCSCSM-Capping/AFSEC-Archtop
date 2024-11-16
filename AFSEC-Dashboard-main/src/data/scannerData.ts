@@ -1,10 +1,12 @@
 import { GridRowsProp } from '@mui/x-data-grid';
 import { formatNumber } from 'functions/formatNumber';
 
-export const ordersStatusData: GridRowsProp = [
+
+// Scan data
+export const scannerData: GridRowsProp = [
   {
     id: '84.64.122.8',
-    client: { name: 'John Carter', email: 'hello@johncarter.com' },
+    cve: { name: 'CVE-2020-1938', description: 'Apache Tomcat Privilege Management Vulnerability' },
     date: new Date('Jan 30, 2024'),
     status: 'deled2',
     country: 'Germantown',
@@ -12,7 +14,7 @@ export const ordersStatusData: GridRowsProp = [
   },
   {
     id: '#1531',
-    client: { name: 'Sophie Moore', email: 'contact@sophiemoore.com' },
+    cve: { name: 'Sophie Moore', description: 'contact@sophiemoore.com' },
     date: new Date('Jan 27, 2024'),
     status: 'canceled',
     country: 'Kingston',
@@ -20,7 +22,7 @@ export const ordersStatusData: GridRowsProp = [
   },
   {
     id: '#1530',
-    client: { name: 'Matt Cannon', email: 'info@mattcannon.com' },
+    cve: { name: 'Matt Cannon', description: 'info@mattcannon.com' },
     date: new Date('Jan 24, 2024'),
     status: 'delivered',
     country: 'Warwick',
@@ -28,7 +30,7 @@ export const ordersStatusData: GridRowsProp = [
   },
   {
     id: '#1529',
-    client: { name: 'Graham Hills', email: 'hi@grahamhills.com' },
+    cve: { name: 'Graham Hills', description: 'hi@grahamhills.com' },
     date: new Date('Jan 21, 2024'),
     status: 'pending',
     country: 'Warwick',
@@ -36,7 +38,7 @@ export const ordersStatusData: GridRowsProp = [
   },
   {
     id: '#1528',
-    client: { name: 'Sandy Houston', email: 'contact@sandyhouston.com' },
+    cve: { name: 'Sandy Houston', description: 'contact@sandyhouston.com' },
     date: new Date('Jan 18, 2024'),
     status: 'delivered',
     country: 'Hancock',
@@ -44,7 +46,7 @@ export const ordersStatusData: GridRowsProp = [
   },
   {
     id: '#1527',
-    client: { name: 'Andy Smith', email: 'hello@andysmith.com' },
+    cve: { name: 'Andy Smith', description: 'hello@andysmith.com' },
     date: new Date('Jan 15, 2024'),
     status: 'pending',
     country: 'Germantown',
@@ -52,7 +54,7 @@ export const ordersStatusData: GridRowsProp = [
   },
   {
     id: '#1526',
-    client: { name: 'Emma Grace', email: 'wow@emmagrace.com' },
+    cve: { name: 'Emma Grace', description: 'wow@emmagrace.com' },
     date: new Date('Jan 12, 2024'),
     status: 'delivered',
     country: 'Germantown',
@@ -60,7 +62,7 @@ export const ordersStatusData: GridRowsProp = [
   },
   {
     id: '#1525',
-    client: { name: 'Ava Rose', email: 'me@avarose.com' },
+    cve: { name: 'Ava Rose', description: 'me@avarose.com' },
     date: new Date('Jan 09, 2024'),
     status: 'canceled',
     country: 'Kingston',
@@ -68,7 +70,7 @@ export const ordersStatusData: GridRowsProp = [
   },
   {
     id: '#1524',
-    client: { name: 'Olivia Jane', email: 'info@oliviajane.com' },
+    cve: { name: 'Olivia Jane', description: 'info@oliviajane.com' },
     date: new Date('Jan 06, 2024'),
     status: 'pending',
     country: 'Kingston',
@@ -76,7 +78,7 @@ export const ordersStatusData: GridRowsProp = [
   },
   {
     id: '#1523',
-    client: { name: 'Mason Alexander', email: 'myinfo@alexander.com' },
+    cve: { name: 'Mason Alexander', description: 'myinfo@alexander.com' },
     date: new Date('Jan 03, 2024'),
     status: 'delivered',
     country: 'Warwick',
@@ -84,7 +86,7 @@ export const ordersStatusData: GridRowsProp = [
   },
   {
     id: '#1522',
-    client: { name: 'Samuel David', email: 'me@samueldavid.com' },
+    cve: { name: 'Samuel David', description: 'me@samueldavid.com' },
     date: new Date('Jan 01, 2024'),
     status: 'pending',
     country: 'Hancock',
@@ -92,7 +94,7 @@ export const ordersStatusData: GridRowsProp = [
   },
   {
     id: '#1521',
-    client: { name: 'Henry Joseph', email: 'contact@henryjoseph.com' },
+    cve: { name: 'Henry Joseph', description: 'contact@henryjoseph.com' },
     date: new Date('Dec 28, 2023'),
     status: 'delivered',
     country: 'Warwick',

@@ -8,7 +8,7 @@ import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import DateSelect from 'components/dates/DateSelect';
 import IconifyIcon from 'components/base/IconifyIcon';
-import OrdersStatusTable from './OrdersStatusTable';
+import CVETable from './OrdersStatusTable';
 
 const OrdersStatus = () => {
   const [searchText, setSearchText] = useState('');
@@ -61,7 +61,7 @@ const OrdersStatus = () => {
       </Stack>
 
       <Box mt={1.5} sx={{ height: 594, width: 1 }}>
-        <OrdersStatusTable searchText={searchText} />
+        <CVETable searchText={searchText} />
       </Box>
     </Paper>
   );
