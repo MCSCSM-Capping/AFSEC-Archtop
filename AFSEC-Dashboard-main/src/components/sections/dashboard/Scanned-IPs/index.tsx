@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import RateChip from 'components/chips/RateChip';
 import DateSelect from 'components/dates/DateSelect';
 import IconifyIcon from 'components/base/IconifyIcon';
-import CompletedTaskChart from './CompletedTaskChart';
+import ScannedIPsChart from './ScannedIPsChart';
 
 const CompletedTask = () => {
   return (
@@ -31,7 +31,7 @@ const CompletedTask = () => {
 
       {/* line chart */}
       <Box height={220}>
-        <CompletedTaskChart sx={{ height: '100% !important' }} />
+        <ScannedIPsChart sx={{ height: '100% !important' }} />
       </Box>
     </Paper>
   );

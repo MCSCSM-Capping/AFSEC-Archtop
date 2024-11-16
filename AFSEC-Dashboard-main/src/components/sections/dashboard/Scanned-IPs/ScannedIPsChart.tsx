@@ -9,7 +9,8 @@ interface CompletedTaskChartProps {
   sx?: SxProps;
 }
 
-const CompletedTaskChart = ({ ...rest }: CompletedTaskChartProps) => {
+// Scanned IPs dashboard chart
+const ScannedIPsChart  = ({ ...rest }: CompletedTaskChartProps) => {
   const theme = useTheme();
 
   const option = useMemo(
@@ -26,6 +27,7 @@ const CompletedTaskChart = ({ ...rest }: CompletedTaskChartProps) => {
         left: 30,
         right: 0,
       },
+      // X axis variables/data (dates)
       xAxis: {
         type: 'category',
         data: ['Aug 1', 'Aug 4', 'Aug 8', 'Aug 12', 'Aug 16', 'Aug 20', 'Aug 24', 'Aug 28', 'Sep 1'],
@@ -42,6 +44,7 @@ const CompletedTaskChart = ({ ...rest }: CompletedTaskChartProps) => {
           fontFamily: fontFamily.monaSans,
         },
       },
+      // Y axis values (amount of IPs scanned)
       yAxis: {
         type: 'value',
         axisLabel: {
@@ -55,6 +58,7 @@ const CompletedTaskChart = ({ ...rest }: CompletedTaskChartProps) => {
         interval: 100,
         max: 300,
       },
+      // Line graph data
       series: [
         {
           data: [0, 130, 130, 300, 90, 220, 180, 240, 90],
@@ -85,4 +89,4 @@ const CompletedTaskChart = ({ ...rest }: CompletedTaskChartProps) => {
   return <ReactEchart echarts={echarts} option={option} {...rest} />;
 };
 
-export default CompletedTaskChart;
+export default ScannedIPsChart;

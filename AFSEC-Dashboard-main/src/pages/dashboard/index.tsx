@@ -2,7 +2,7 @@ import Grid from '@mui/material/Grid';
 import TotalCVEs from 'components/sections/dashboard/TotalCVEChart';
 import RevenueByCustomer from 'components/sections/dashboard/revenue-by-customer';
 import Products from 'components/sections/dashboard/products';
-import CompletedTask from 'components/sections/dashboard/completed-task';
+import CompletedTask from 'components/sections/dashboard/Scanned-IPs';
 
 const Dashboard = () => {
   return (
