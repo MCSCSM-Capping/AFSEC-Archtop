@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { format } from 'date-fns';
 import { scannerData } from 'data/scannerData';
-import { SelectChangeEvent } from '@mui/material';
+// import { SelectChangeEvent } from '@mui/material';
 import Stack from '@mui/material/Stack';
-import Select from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
+// import Select from '@mui/material/Select';
+// import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
-import StatusChip from 'components/chips/StatusChip';
+// import StatusChip from 'components/chips/StatusChip';
 import IconifyIcon from 'components/base/IconifyIcon';
 import DataGridFooter from 'components/common/DataGridFooter';
 import {
@@ -16,7 +16,7 @@ import {
   GridApi,
   GridColDef,
   GridActionsCellItem,
-  GridRenderEditCellParams,
+  // GridRenderEditCellParams,
   GridEventListener,
   GridRowId,
   GridRowModel,
@@ -79,7 +79,7 @@ const CVETable = ({ searchText }: OrdersStatusTableProps) => {
 
   // Data and some formatting for the scanner table
   const columns: GridColDef[] = [
-    // IP found
+    // Scanner
     {
       field: 'id',
       headerName: 'IP Address',
@@ -87,37 +87,13 @@ const CVETable = ({ searchText }: OrdersStatusTableProps) => {
       flex: 1,
       resizable: false,
     },
-    // CVE found
+    // Scan source
     {
-      field: 'cve',
-      headerName: 'CVE',
-      flex: 2,
+      field: 'scanSource',
+      headerName: 'Scan Source',
+      flex: 1,
       minWidth: 180,
       resizable: false,
-      renderHeader: () => (
-        <Stack alignItems="center" gap={0.75}>
-          <IconifyIcon icon="mingcute:user-2-fill" color="neutral.main" fontSize="body2.fontSize" />
-          <Typography variant="caption" mt={0.25} letterSpacing={0.5}>
-          CVE
-          </Typography>
-        </Stack>
-      ),
-      valueGetter: (params: { name: string; description: string }) => {
-        return `${params.name} ${params.description}`;
-      },
-      renderCell: (params) => {
-        return (
-          <Stack direction="column" alignSelf="center" justifyContent="center" sx={{ height: 1 }}>
-            <Typography variant="subtitle1" fontSize="caption.fontSize">
-              {params.row.cve.name}
-            </Typography>
-            <Typography variant="subtitle2" color="text.secondary" fontSize="caption.fontSize">
-              {params.row.cve.description}
-            </Typography>
-          </Stack>
-        );
-      },
-      sortComparator: (v1, v2) => v1.localeCompare(v2),
     },
     // Date CVE was found
     {
@@ -138,7 +114,19 @@ const CVETable = ({ searchText }: OrdersStatusTableProps) => {
       ),
       renderCell: (params) => format(new Date(params.value), 'MMM dd, yyyy'),
     },
+    // Scan information found
+    {
+      field: 'scanInfo',
+      headerName: 'Scan Info',
+      headerAlign: 'left',
+      align: 'right',
+      sortable: false,
+      minWidth: 120,
+      flex: 4,
+      resizable: false,
+    },
     // Status of the CVE
+    /* 
     {
       field: 'status',
       headerName: 'Status',
@@ -214,6 +202,7 @@ const CVETable = ({ searchText }: OrdersStatusTableProps) => {
       flex: 1,
       resizable: false,
     },
+    */
     {
       field: 'actions',
       type: 'actions',

@@ -1,19 +1,17 @@
 import { GridRowsProp } from '@mui/x-data-grid';
-import { formatNumber } from 'functions/formatNumber';
+// import { formatNumber } from 'functions/formatNumber';
 
 
 // Scan data
 export const scannerData: GridRowsProp = [
   {
-    id: '84.64.122.8',
-    cve: { name: 'CVE-2020-1938', description: 'Apache Tomcat Privilege Management Vulnerability' },
+    id: 'Vulscan',
+    scanSource: 'ip + port',
     date: new Date('Jan 30, 2024'),
-    status: 'deled2',
-    country: 'Germantown',
-    total: formatNumber(1099.24),
+    scanInfo: 'The Cisco Small Business 200 Series Smart Switch 1.2.7.76 and earlier, Small Business 300 Series Managed Switch 1.2.7.76 and earlier, and Small Business 500 Series Stackable Managed Switch 1.2.7.76 and earlier allow remote attackers to cause a denial of service (SSL/TLS layer outage) via malformed (1) SSH or (2) SSL packets, aka Bug ID CSCua30246. - Link:  (5)',
   },
-  {
-    id: '#1531',
+  /*{
+    id: 'Vulscan',
     cve: { name: 'Sophie Moore', description: 'contact@sophiemoore.com' },
     date: new Date('Jan 27, 2024'),
     status: 'canceled',
@@ -21,7 +19,7 @@ export const scannerData: GridRowsProp = [
     total: formatNumber(5870.32),
   },
   {
-    id: '#1530',
+    id: 'Vulscan',
     cve: { name: 'Matt Cannon', description: 'info@mattcannon.com' },
     date: new Date('Jan 24, 2024'),
     status: 'delivered',
@@ -29,7 +27,7 @@ export const scannerData: GridRowsProp = [
     total: formatNumber(13899.48),
   },
   {
-    id: '#1529',
+    id: 'SpiderFoot',
     cve: { name: 'Graham Hills', description: 'hi@grahamhills.com' },
     date: new Date('Jan 21, 2024'),
     status: 'pending',
@@ -60,7 +58,7 @@ export const scannerData: GridRowsProp = [
     country: 'Germantown',
     total: formatNumber(6729.82),
   },
-  {
+  /*{
     id: '#1525',
     cve: { name: 'Ava Rose', description: 'me@avarose.com' },
     date: new Date('Jan 09, 2024'),
@@ -99,5 +97,5 @@ export const scannerData: GridRowsProp = [
     status: 'delivered',
     country: 'Warwick',
     total: formatNumber(5245.68),
-  },
+  },*/
 ];
