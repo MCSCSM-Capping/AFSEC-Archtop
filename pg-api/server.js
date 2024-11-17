@@ -3,6 +3,10 @@ const express = require('express')
 const app = express()
 const port = 3001
 
+const cors = require('cors');
+
+app.use(cors());
+
 require('dotenv').config();  // loads environment variables from .env file
 
 const { Pool } = require('pg');
