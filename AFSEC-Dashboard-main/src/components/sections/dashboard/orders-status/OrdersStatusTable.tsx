@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { format } from 'date-fns';
+//imports the function in needed to set the table
 import { scannerData } from 'data/scannerData';
 // import { SelectChangeEvent } from '@mui/material';
 import Stack from '@mui/material/Stack';
@@ -9,6 +10,7 @@ import Typography from '@mui/material/Typography';
 // import StatusChip from 'components/chips/StatusChip';
 import IconifyIcon from 'components/base/IconifyIcon';
 import DataGridFooter from 'components/common/DataGridFooter';
+
 import {
   GridRowModesModel,
   GridRowModes,
@@ -30,6 +32,7 @@ interface OrdersStatusTableProps {
 
 const CVETable = ({ searchText }: OrdersStatusTableProps) => {
   const apiRef = useGridApiRef<GridApi>();
+  //this is where the data gets sent to the scannerData file and then the rest of this files sets it all up for the dashbaord table
   const [rows, setRows] = useState(scannerData);
   const [rowModesModel, setRowModesModel] = useState<GridRowModesModel>({});
 
@@ -52,6 +55,8 @@ const CVETable = ({ searchText }: OrdersStatusTableProps) => {
   };
 
   const handleDeleteClick = (id: GridRowId) => () => {
+    //these are filters for it to delete
+    // looks for a row id
     setRows(rows.filter((row) => row.id !== id));
   };
 
@@ -61,6 +66,8 @@ const CVETable = ({ searchText }: OrdersStatusTableProps) => {
       [id]: { mode: GridRowModes.View, ignoreModifications: true },
     });
 
+    //these are filters for it to delete
+    // looks for a row id
     const editedRow = rows.find((row) => row.id === id);
     if (editedRow!.isNew) {
       setRows(rows.filter((row) => row.id !== id));
@@ -69,6 +76,8 @@ const CVETable = ({ searchText }: OrdersStatusTableProps) => {
 
   const processRowUpdate = (newRow: GridRowModel) => {
     const updatedRow = { ...newRow, isNew: false };
+    //these are filters for it to delete
+    //looks for a row id
     setRows(rows.map((row) => (row.id === newRow.id ? updatedRow : row)));
     return updatedRow;
   };
@@ -273,6 +282,10 @@ const CVETable = ({ searchText }: OrdersStatusTableProps) => {
     },
   ];
 
+
+  //data grid for the table just like in stack
+  //this the bottom half
+  //maybe we move the function out of scannerData and add it all to here to makle ot work like in stack?
   return (
     <DataGrid
       apiRef={apiRef}
