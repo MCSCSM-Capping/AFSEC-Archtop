@@ -25,22 +25,36 @@ export async function getData(): Promise<dataInterface[]> {
   }
 })();
 
-// Scan data
-export const scannerData: GridRowsProp = [
-  {
-    id: 'Vulscan',
-    scanSource: 'ip + port',
-    date: new Date('Jan 30, 2024'),
-    scanInfo: 'The Cisco Small Business 200 Series Smart Switch 1.2.7.76 and earlier, Small Business 300 Series Managed Switch 1.2.7.76 and earlier, and Small Business 500 Series Stackable Managed Switch 1.2.7.76 and earlier allow remote attackers to cause a denial of service (SSL/TLS layer outage) via malformed (1) SSH or (2) SSL packets, aka Bug ID CSCua30246. - Link:  (5)',
-  },
-];
 
-const formattedDate = scannerData.map((item) => ({
-  id: item.scan_source,
-  scanSource: item.scan_source,
-  date: item.scan_date,
-  scanInfo: item.scan_info
-}))
+//json has multiple objects
+//each object has scanner scan_source, scan_date, scan_info
+//can parse with var obj = JSON.parse(filter);
+//with each obj add it as a prop
+
+export async function data2Grid(){
+  const scannerData: GridRowsProp = [];
+  const [rows, setRows] = React.useState(scannerData);
+
+  for (let i = 0; i < data.length; i++) {
+              const newRow = {
+                id: rows.length + 1,
+                scanner: data[i]["payment_address"],
+                scan_source:
+                scan_date:
+                scan_info:
+              };
+              setRows((prevRows) => [...prevRows, newRow]);
+  }
+
+  <DataGrid rows = scannerData.map((item) => ({
+    id: i + 1,
+    scanner: item.scanner,
+    scan_source: item.scan_source,
+    scan_date: item.scan_date,
+    scan_info: item.scan_info
+  }))
+}
+
 
 
 
