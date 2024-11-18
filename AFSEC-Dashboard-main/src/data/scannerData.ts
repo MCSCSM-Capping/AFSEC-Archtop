@@ -1,6 +1,7 @@
 import { GridRowsProp } from '@mui/x-data-grid';
 // import { formatNumber } from 'functions/formatNumber';
 import type { dataInterface } from './dataInterface'
+import React, { useState, useEffect } from 'react';
 
 export async function getData(): Promise<dataInterface[]> {
   const request = await fetch('http://localhost:3001/api/main_table')
@@ -13,7 +14,7 @@ export async function getData(): Promise<dataInterface[]> {
   try {
     const data = await getData();
     console.log('Fetched data:', data);
-
+    
     if (data.length > 0) {
       console.log('Data is holding:', data);
     } else {
@@ -33,3 +34,14 @@ export const scannerData: GridRowsProp = [
     scanInfo: 'The Cisco Small Business 200 Series Smart Switch 1.2.7.76 and earlier, Small Business 300 Series Managed Switch 1.2.7.76 and earlier, and Small Business 500 Series Stackable Managed Switch 1.2.7.76 and earlier allow remote attackers to cause a denial of service (SSL/TLS layer outage) via malformed (1) SSH or (2) SSL packets, aka Bug ID CSCua30246. - Link:  (5)',
   },
 ];
+
+const formattedDate = scannerData.map((item) => ({
+  id: item.scan_source,
+  scanSource: item.scan_source,
+  date: item.scan_date,
+  scanInfo: item.scan_info
+}))
+
+
+
+
