@@ -1,7 +1,7 @@
 import { GridRowsProp } from '@mui/x-data-grid';
 // import { formatNumber } from 'functions/formatNumber';
 import type { dataInterface } from './dataInterface'
-import React from 'react';
+//import React from 'react';
 
 export async function getData(): Promise<dataInterface[]> {
   //connection is not currently working right now also it wont be local host when it is actually deployed
@@ -21,7 +21,7 @@ export let scannerData: GridRowsProp = [];
     if (data.length > 0) {
       console.log('Data is holding:', data);
 
-      data2Grid(data);
+      scannerData = data2Grid(data);
     } else {
       console.log('No data found.');
     }
@@ -58,17 +58,13 @@ or move all this stuff to the old file and add it over there not sure what the b
 //what type is data
 //what type is data
 function data2Grid(data: dataInterface[]){
-  var scannerTable: GridRowsProp = [];
-
-  scannerTable = return data.map((item, index) => ({
+  return data.map((item, index) => ({
     id: index + 1,
     scanner: item.scanner,
     scan_source: item.scan_source,
     scan_date: item.scan_date,
     scan_info: item.scan_info,
    }));
-
-  scannerData = scannerTable;
 }
 
 
