@@ -56,13 +56,24 @@ or move all this stuff to the old file and add it over there not sure what the b
 */
 
 //what type is data
-//what type is data
-function data2Grid(data: dataInterface[]){
+//one that matches the format of the table but cause a wild amount of hook errors and such
+/*function data2Grid(data: dataInterface[]){
   return data.map((item) => ({
     id: item.scanner,
     scanSource: item.scan_source,
     date: item.scan_date,
     scanInfo: item.scan_info,
+   }));
+}*/
+
+//no hook error but does not load it in to the dashboard
+function data2Grid(data: dataInterface[]){
+  return data.map((item, index) => ({
+    id: index + 1,
+    scanner: item.scanner,
+    scan_source: item.scan_source,
+    scan_date: item.scan_date,
+    scan_info: item.scan_info,
    }));
 }
 
