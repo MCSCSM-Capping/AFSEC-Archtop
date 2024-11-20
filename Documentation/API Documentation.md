@@ -1,20 +1,20 @@
-#API Information
+# API Information
 
-##How to Start up the API
+## How to Start up the API
 
-###Start a new terminal window
+### Start a new terminal window
 
-###Change directory to the pg-api folder
+### Change directory to the pg-api folder
 ```bash
 cd \developer\home\AFSEC-Archtop\pg-api
 ```
 
-###Launch the server file
+### Launch the server file
 ```bash
 node server.js
 ```
 
-##Endpoints
+## Endpoints
 	There are currently only 3 endpoints created for API access.
 	
 	These 2 are for testing:
