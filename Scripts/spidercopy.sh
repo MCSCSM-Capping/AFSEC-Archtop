@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Docker container name
-CONTAINER_NAME="busy_leakey"
+CONTAINER_NAME="spiderfoot"
 
 # Base output folder in the Docker container
 CONTAINER_OUTPUT_DIR="/home/spiderfoot/output"

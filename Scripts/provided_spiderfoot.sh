@@ -13,7 +13,7 @@ IFS=',' read -r -a IP_ARRAY <<< "$1"
 CONTAINER_OUTPUT_DIR="/home/spiderfoot/output"
 
 # Docker container name
-CONTAINER_NAME="busy_leakey"
+CONTAINER_NAME="spiderfoot"
 
 # Current date (used for folder name)
 CURRENT_DATE=$(date +%F)

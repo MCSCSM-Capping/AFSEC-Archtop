@@ -7,7 +7,7 @@ IP_FILE="/home/developer/ips.txt"
 CONTAINER_OUTPUT_DIR="/home/spiderfoot/output"
 
 # Docker container name
-CONTAINER_NAME="busy_leakey"
+CONTAINER_NAME="spiderfoot"
 
 # Loop through each IP address in the file
 while read -r ip; do

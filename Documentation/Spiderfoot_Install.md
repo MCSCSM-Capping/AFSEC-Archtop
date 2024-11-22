@@ -35,7 +35,7 @@ sudo docker pull josaorg/spiderfoot
 
 ## Start the container on port 5001
 ```bash
-sudo docker run -d -p 5001:5001 josaorg/spiderfoot
+sudo docker run --name spiderfoot -d -p 5001:5001 josaorg/spiderfoot
 ```
 
 ## Access via Web Dashboard
