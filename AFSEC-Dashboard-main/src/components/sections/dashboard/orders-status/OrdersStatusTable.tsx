@@ -1,16 +1,10 @@
 import { useState, useEffect } from 'react';
 import { format } from 'date-fns';
-//imports the function in needed to set the table
 import { scannerData } from 'data/scannerData';
-// import { SelectChangeEvent } from '@mui/material';
 import Stack from '@mui/material/Stack';
-// import Select from '@mui/material/Select';
-// import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
-// import StatusChip from 'components/chips/StatusChip';
 import IconifyIcon from 'components/base/IconifyIcon';
 import DataGridFooter from 'components/common/DataGridFooter';
-
 import {
   GridRowModesModel,
   GridRowModes,
@@ -18,7 +12,6 @@ import {
   GridApi,
   GridColDef,
   GridActionsCellItem,
-  // GridRenderEditCellParams,
   GridEventListener,
   GridRowId,
   GridRowModel,
@@ -30,12 +23,18 @@ interface OrdersStatusTableProps {
   searchText: string;
 }
 
+//this is where the data gets sent to the scannerData file and then the rest of this files sets it all up for the dashboard table
 const CVETable = ({ searchText }: OrdersStatusTableProps) => {
   const apiRef = useGridApiRef<GridApi>();
-  //this is where the data gets sent to the scannerData file and then the rest of this files sets it all up for the dashbaord table
   const [rows, setRows] = useState(scannerData);
   const [rowModesModel, setRowModesModel] = useState<GridRowModesModel>({});
 
+  // update rows
+  useEffect(() => {
+    setRows(scannerData);
+  }, [scannerData]);
+
+  // filter rows
   useEffect(() => {
     apiRef.current.setQuickFilterValues(searchText.split(/\b\W+\b/).filter((word) => word !== ''));
   }, [searchText]);
@@ -66,7 +65,7 @@ const CVETable = ({ searchText }: OrdersStatusTableProps) => {
       [id]: { mode: GridRowModes.View, ignoreModifications: true },
     });
 
-    //these are filters for it to delete
+    // these are filters for it to delete
     // looks for a row id
     const editedRow = rows.find((row) => row.id === id);
     if (editedRow!.isNew) {
@@ -76,8 +75,6 @@ const CVETable = ({ searchText }: OrdersStatusTableProps) => {
 
   const processRowUpdate = (newRow: GridRowModel) => {
     const updatedRow = { ...newRow, isNew: false };
-    //these are filters for it to delete
-    //looks for a row id
     setRows(rows.map((row) => (row.id === newRow.id ? updatedRow : row)));
     return updatedRow;
   };
@@ -86,12 +83,20 @@ const CVETable = ({ searchText }: OrdersStatusTableProps) => {
     setRowModesModel(newRowModesModel);
   };
 
-  // Data and some formatting for the scanner table
+  // define columns
   const columns: GridColDef[] = [
-    // Scanner
+    // ID
     {
       field: 'id',
-      headerName: 'IP Address',
+      headerName: 'ID',
+      minWidth: 80,
+      flex: 1,
+      resizable: false,
+    },
+    // Scanner
+    {
+      field: 'scanner',
+      headerName: 'Scanner',
       minWidth: 80,
       flex: 1,
       resizable: false,
@@ -134,84 +139,6 @@ const CVETable = ({ searchText }: OrdersStatusTableProps) => {
       flex: 4,
       resizable: false,
     },
-    // Status of the CVE
-    /* 
-    {
-      field: 'status',
-      headerName: 'Status',
-      sortable: false,
-      minWidth: 120,
-      flex: 1,
-      resizable: false,
-      renderHeader: () => (
-        <Stack alignItems="center" gap={0.875}>
-          <IconifyIcon
-            icon="carbon:checkbox-checked-filled"
-            color="neutral.main"
-            fontSize="body1.fontSize"
-          />
-          <Typography mt={0.175} variant="caption" letterSpacing={0.5}>
-            Status
-          </Typography>
-        </Stack>
-      ),
-      renderCell: (params) => {
-        return (
-          <Stack direction="column" alignSelf="center" justifyContent="center" sx={{ height: 1 }}>
-            <StatusChip status={params.value} />
-          </Stack>
-        );
-      },
-      renderEditCell: (params: GridRenderEditCellParams) => {
-        const handleChange = (event: SelectChangeEvent<string>) => {
-          params.api.setEditCellValue({
-            id: params.id,
-            field: params.field,
-            value: event.target.value,
-          });
-        };
-        return (
-          <Select value={params.value} onChange={handleChange} fullWidth>
-            <MenuItem value="delivered">Delivered</MenuItem>
-            <MenuItem value="pending">Pending</MenuItem>
-            <MenuItem value="canceled">Canceled</MenuItem>
-          </Select>
-        );
-      },
-      editable: true,
-    },
-    {
-      field: 'country',
-      headerName: 'Country',
-      sortable: false,
-      flex: 1,
-      minWidth: 120,
-      resizable: false,
-      editable: true,
-      renderHeader: () => (
-        <Stack alignItems="center" gap={0.75}>
-          <IconifyIcon
-            icon="healthicons:geo-location"
-            color="neutral.main"
-            fontSize="h5.fontSize"
-          />
-          <Typography mt={0.175} variant="caption" letterSpacing={0.5}>
-            Country
-          </Typography>
-        </Stack>
-      ),
-    },
-    {
-      field: 'total',
-      headerName: 'Total',
-      headerAlign: 'right',
-      align: 'right',
-      sortable: false,
-      minWidth: 120,
-      flex: 1,
-      resizable: false,
-    },
-    */
     {
       field: 'actions',
       type: 'actions',
@@ -281,7 +208,6 @@ const CVETable = ({ searchText }: OrdersStatusTableProps) => {
       },
     },
   ];
-
 
   //data grid for the table just like in stack
   //this the bottom half
