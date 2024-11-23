@@ -34,7 +34,7 @@ export function data2Grid(data: dataInterface[]): GridRowsProp {
     id: index + 1,
     scanner: item.scanner,
     scanSource: item.scan_source,
-    date: new Date(item.scan_date),
+    date: item.scan_date,
     scanInfo: item.scan_info,
    }));
 }
