@@ -117,16 +117,7 @@ const CVETable = ({ searchText }: OrdersStatusTableProps) => {
       editable: true,
       minWidth: 100,
       flex: 1,
-      resizable: false,
-      renderHeader: () => (
-        <Stack alignItems="center" gap={0.75}>
-          <IconifyIcon icon="mdi:calendar" color="neutral.main" fontSize="body1.fontSize" />
-          <Typography mt={0.175} variant="caption" letterSpacing={0.5}>
-            Date
-          </Typography>
-        </Stack>
-      ),
-      renderCell: (params) => format(new Date(params.value), 'MMM dd, yyyy'),
+      resizable: false
     },
     // Scan information found
     {
