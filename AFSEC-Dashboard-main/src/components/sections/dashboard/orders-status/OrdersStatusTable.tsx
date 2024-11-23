@@ -1,11 +1,7 @@
 import { useState, useEffect } from 'react';
 import { scannerData } from 'data/scannerData';
-// import { SelectChangeEvent } from '@mui/material';
 import Stack from '@mui/material/Stack';
-// import Select from '@mui/material/Select';
-// import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
-// import StatusChip from 'components/chips/StatusChip';
 import IconifyIcon from 'components/base/IconifyIcon';
 import DataGridFooter from 'components/common/DataGridFooter';
 import {
@@ -15,7 +11,6 @@ import {
   GridApi,
   GridColDef,
   GridActionsCellItem,
-  // GridRenderEditCellParams,
   GridEventListener,
   GridRowId,
   GridRowModel,
@@ -27,6 +22,7 @@ interface OrdersStatusTableProps {
   searchText: string;
 }
 
+// table functionality/editing. Also grabs json info from scannerData.ts
 const CVETable = ({ searchText }: OrdersStatusTableProps) => {
   const apiRef = useGridApiRef<GridApi>();
   const [rows, setRows] = useState(scannerData);
@@ -76,9 +72,9 @@ const CVETable = ({ searchText }: OrdersStatusTableProps) => {
     setRowModesModel(newRowModesModel);
   };
 
-   // Data and some formatting for the scanner table
+  // table definition and outline
   const columns: GridColDef[] = [
-    //id
+    // ID
     {
      field: 'id',
      headerName: 'id',
@@ -131,83 +127,6 @@ const CVETable = ({ searchText }: OrdersStatusTableProps) => {
       flex: 4,
       resizable: false,
     },
-    /* 
-    {
-      field: 'status',
-      headerName: 'Status',
-      sortable: false,
-      minWidth: 120,
-      flex: 1,
-      resizable: false,
-      renderHeader: () => (
-        <Stack alignItems="center" gap={0.875}>
-          <IconifyIcon
-            icon="carbon:checkbox-checked-filled"
-            color="neutral.main"
-            fontSize="body1.fontSize"
-          />
-          <Typography mt={0.175} variant="caption" letterSpacing={0.5}>
-            Status
-          </Typography>
-        </Stack>
-      ),
-      renderCell: (params) => {
-        return (
-          <Stack direction="column" alignSelf="center" justifyContent="center" sx={{ height: 1 }}>
-            <StatusChip status={params.value} />
-          </Stack>
-        );
-      },
-      renderEditCell: (params: GridRenderEditCellParams) => {
-        const handleChange = (event: SelectChangeEvent<string>) => {
-          params.api.setEditCellValue({
-            id: params.id,
-            field: params.field,
-            value: event.target.value,
-          });
-        };
-        return (
-          <Select value={params.value} onChange={handleChange} fullWidth>
-            <MenuItem value="delivered">Delivered</MenuItem>
-            <MenuItem value="pending">Pending</MenuItem>
-            <MenuItem value="canceled">Canceled</MenuItem>
-          </Select>
-        );
-      },
-      editable: true,
-    },
-    {
-      field: 'country',
-      headerName: 'Country',
-      sortable: false,
-      flex: 1,
-      minWidth: 120,
-      resizable: false,
-      editable: true,
-      renderHeader: () => (
-        <Stack alignItems="center" gap={0.75}>
-          <IconifyIcon
-            icon="healthicons:geo-location"
-            color="neutral.main"
-            fontSize="h5.fontSize"
-          />
-          <Typography mt={0.175} variant="caption" letterSpacing={0.5}>
-            Country
-          </Typography>
-        </Stack>
-      ),
-    },
-    {
-      field: 'total',
-      headerName: 'Total',
-      headerAlign: 'right',
-      align: 'right',
-      sortable: false,
-      minWidth: 120,
-      flex: 1,
-      resizable: false,
-    },
-    */
     {
       field: 'actions',
       type: 'actions',
@@ -278,6 +197,7 @@ const CVETable = ({ searchText }: OrdersStatusTableProps) => {
     },
   ];
 
+  // stack overflow code:https://stackoverflow.com/questions/75213694/how-to-auto-increment-row-id-when-inserting-new-row-in-mui-data-grid
   return (
     <DataGrid
       apiRef={apiRef}
