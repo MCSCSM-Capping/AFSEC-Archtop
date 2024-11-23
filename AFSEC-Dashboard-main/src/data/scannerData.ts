@@ -10,7 +10,14 @@ export async function getData(): Promise<dataInterface[]> {
   return data
 }
 
-export let scannerData: GridRowsProp = [];
+export const scannerData: GridRowsProp = [
+  {
+    id: 'Vulscan',
+    scanSource: 'ip + port',
+    date: new Date('Jan 30, 2024'),
+    scanInfo: 'The Cisco Small Business 200 Series Smart Switch 1.2.7.76 and earlier, Small Business 300 Series Managed Switch 1.2.7.76 and earlier, and Small Business 500 Series Stackable Managed Switch 1.2.7.76 and earlier allow remote attackers to cause a denial of service (SSL/TLS layer outage) via malformed (1) SSH or (2) SSL packets, aka Bug ID CSCua30246. - Link:  (5)',
+  },
+];
 
 // testing
 (async () => {
@@ -21,7 +28,7 @@ export let scannerData: GridRowsProp = [];
     if (data.length > 0) {
       console.log('Data is holding:', data);
 
-      scannerData = data2Grid(data);
+      //scannerData = data2Grid(data);
     } else {
       console.log('No data found.');
     }
@@ -67,7 +74,7 @@ or move all this stuff to the old file and add it over there not sure what the b
 }*/
 
 //no hook error but does not load it in to the dashboard
-function data2Grid(data: dataInterface[]){
+/*function data2Grid(data: dataInterface[]){
   return data.map((item, index) => ({
     id: index + 1,
     scanner: item.scanner,
@@ -75,7 +82,7 @@ function data2Grid(data: dataInterface[]){
     scan_date: item.scan_date,
     scan_info: item.scan_info,
    }));
-}
+}*/
 
 
 
