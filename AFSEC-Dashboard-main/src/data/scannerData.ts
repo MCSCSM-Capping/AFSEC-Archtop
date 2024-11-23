@@ -61,9 +61,9 @@ function data2Grid(data: dataInterface[]){
   return data.map((item, index) => ({
     id: index + 1,
     scanner: item.scanner,
-    scanSource: item.scan_source,
-    date: item.scan_date,
-    scanInfo: item.scan_info,
+    scan_source: item.scan_source,
+    scan_date: new Date('Jan 30,2024'),
+    scan_info: item.scan_info,
    }));
 }
 
@@ -77,8 +77,3 @@ function data2Grid(data: dataInterface[]){
     scan_info: item.scan_info,
    }));
 }*/
-
-
-
-
-
