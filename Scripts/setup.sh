@@ -38,4 +38,5 @@ sudo git clone https://github.com/MCSCSM-Capping/AFSEC-Archtop.git
 
 echo "Initial Setup Script Complete"
 echo "Please proceed to Postgres DB setup"
+echo "Make sure to set Postgres password on postgres and update md5 setting"
 
