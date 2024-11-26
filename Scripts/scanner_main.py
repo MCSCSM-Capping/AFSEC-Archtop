@@ -54,7 +54,14 @@ def main():
     # prints out to the user that vulscan is done
     print("Done with Vulscan")
 
+    # the query that will be executed
     select_query = """SELECT * FROM spiderfoot_data;"""
+
+    # executes the query agentst the connected database
+    cursor.execute(select_query)
+
+    # get the data from the executed database
+    data = cursor.fetchall()
 
     # output to user to make sure that the user knows what step the db is on
     print("Starting move to Spiderfoot")
