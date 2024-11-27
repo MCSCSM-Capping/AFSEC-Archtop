@@ -1,5 +1,27 @@
 import Grid from '@mui/material/Grid';
 import TopCard from './TopCard';
+import { useEffect, useState } from 'react';
+import { scannerData } from 'data/scannerData';
+import { GridRowsProp } from '@mui/x-data-grid';
+
+// Obtaining scanner data
+const useScannerData = (): GridRowsProp => {
+  const [data, setData] = useState<GridRowsProp>([]);
+
+  useEffect(() => {
+    // Set data from scannerData
+    setData([...scannerData]);
+
+    // Dynamically updating scannerData every 5mins in case of changes
+    const interval = setInterval(() => {
+      setData([...scannerData]);
+    }, 300000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return data;
+};
 
 // Statistics at the top of the table
 const cardsData = [
@@ -43,6 +65,12 @@ const cardsData = [
 
 // Creating each card
 const TopCards = () => {
+  // Testing to see if data obtained
+  const data = useScannerData();
+  console.log('Scanner data in index.tsx:', data);
+
+  // Potentially do the counters here?... (or a different function)
+
   return (
     <Grid container spacing={{ xs: 2.5, sm: 3, lg: 3.75 }}>
       {cardsData.map((item) => {
