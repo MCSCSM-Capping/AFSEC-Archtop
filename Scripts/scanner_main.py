@@ -40,7 +40,7 @@ def main():
         # vulscan: scan_date
         scan_date = row[9]
         # vulscan: host + os + protocol + service + product + id + title
-        scan_info = row[1] + " : " + row[2] + " : " + row[3] + " : " + row[5] + " : " + row[6] + " : " + row[7] +  " : " + row[8]
+        scan_info = row[1] + " : " + row[2] + " : " + row[3] + " : " + row[5] + " : " + row[6] + " : " + row[7] +  " : " + row[8] + " : "
 
         # the new insert query to insert the data into the main table
         insert_query = """INSERT INTO main_table (scanner, scan_source, scan_date, scan_info) VALUES (%s, %s, %s, %s);"""
@@ -74,7 +74,7 @@ def main():
         # spiderfoot:
         scan_date = row[4]
         # spiderfoot:
-        scan_info = row[0] + " : " + row[1] + " : " + row[2]
+        scan_info = row[0] + " : " + row[1] + " : " + row[2] + " : "
 
         # the new insert query to insert the data into the main table
         insert_query = """INSERT INTO main_table (scanner, scan_source, scan_date, scan_info) VALUES (%s, %s, %s, %s);"""
