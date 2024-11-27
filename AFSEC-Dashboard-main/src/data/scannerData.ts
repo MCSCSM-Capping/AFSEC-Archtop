@@ -23,7 +23,7 @@ async function apiCall(){
   }
 }
 
-async function parsing(index:number, data:string): Promise<string> {
+function parsing(index:number, data:string): string {
   let parse = "";
   const regex = /:/g;
 
