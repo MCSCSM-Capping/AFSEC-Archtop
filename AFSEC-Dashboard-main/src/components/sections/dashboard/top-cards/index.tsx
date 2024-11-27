@@ -1,15 +1,18 @@
 import Grid from '@mui/material/Grid';
 import TopCard from './TopCard';
 
+// Statistics at the top of the table
 const cardsData = [
+  // IPS Scanned
   {
     id: 1,
     title: 'IPs Scanned',
-    value: '50.8K',
+    value: '51.8K',
     rate: '28.4%',
     isUp: true,
     icon: 'mingcute:world-2-fill',
   },
+  // Open ports found
   {
     id: 2,
     title: 'Open Ports',
@@ -18,6 +21,7 @@ const cardsData = [
     isUp: false,
     icon: 'mingcute:target-fill',
   },
+  // CVEs detected
   {
     id: 3,
     title: 'CVEs Detected',
@@ -26,6 +30,7 @@ const cardsData = [
     isUp: true,
     icon: 'mingcute:report-fill',
   },
+  // CVE percentage
   {
     id: 4,
     title: 'CVE Percentage',
@@ -36,6 +41,7 @@ const cardsData = [
   },
 ];
 
+// Creating each card
 const TopCards = () => {
   return (
     <Grid container spacing={{ xs: 2.5, sm: 3, lg: 3.75 }}>

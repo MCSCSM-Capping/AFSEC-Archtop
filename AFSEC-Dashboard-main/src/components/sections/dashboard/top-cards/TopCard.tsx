@@ -14,6 +14,7 @@ interface TopCardProps {
   isUp: boolean;
 }
 
+// Formatting of the statistic cards
 const TopCard = (props: TopCardProps) => {
   const { icon, title, value, rate, isUp } = props;
 
