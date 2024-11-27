@@ -36,7 +36,7 @@ function data2Grid(data: dataInterface[]){
     id: index + 1,
     scanner: item.scanner,
     scan_source: item.scan_source,
-    scan_date: new Date('Jan 30,2024'),
+    scan_date: new Date(item.scan_date),
     scan_info: item.scan_info,
 
     // below is not added in yet but these should be ideally mapped as well
