@@ -30,17 +30,17 @@ sudo git clone https://github.com/scipag/vulscan.git
 # Install Postgres + Check Status
 sudo apt install postgresql postgresql-contrib -y
 
-sudo cd ~/AFSEC-ARCHTOP/spiderfoot
+cd ../spiderfoot
 
 sudo chmod a+x *
 
-sudo mkdir scans
+mkdir scans
 
-sudo cd ../vulscan
+cd ../vulscan
 
 sudo chmod a+x *
 
-sudo mkdir vulscan-results
+mkdir vulscan-results
 
 cd ../AFSEC-Dashboard-main
 
