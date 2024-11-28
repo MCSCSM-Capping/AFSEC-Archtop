@@ -1,5 +1,7 @@
 #/bin/bash
 
+sudo chmod a+x *
+
 # Update Packages
 sudo apt update
 
