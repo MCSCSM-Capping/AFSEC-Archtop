@@ -2,7 +2,9 @@
 CREATE TABLE spiderfoot_data (
     generated VARCHAR,
     type VARCHAR,
-    data VARCHAR
+    data VARCHAR,
+    source_ip VARCHAR,
+    scan_date DATE
 );
 
 

@@ -4,7 +4,7 @@
 sudo apt update
 
 # Install Docker + Start
-sudo apt install docker.io
+sudo apt install docker.io -y
 
 sudo systemctl enable docker
 sudo systemctl start docker
@@ -20,7 +20,7 @@ sudo docker run --name spiderfoot -d -p 5001:5001 josaorg/spiderfoot
 
 # Install nmap + Vulscan
 
-sudo apt install nmap
+sudo apt install nmap -y
 
 nmap --version
 
@@ -28,13 +28,19 @@ cd /usr/share/nmap/scripts/
 sudo git clone https://github.com/scipag/vulscan.git
 
 # Install Postgres + Check Status
-sudo apt install postgresql postgresql-contrib
+sudo apt install postgresql postgresql-contrib -y
 
-sudo systemctl status postgresql
+sudo cd ~/AFSEC-ARCHTOP/spiderfoot
 
-sudo cd ~
+sudo chmod a+x *
 
-sudo git clone https://github.com/MCSCSM-Capping/AFSEC-Archtop.git
+sudo mkdir scans
+
+sudo cd ../vulscan
+
+sudo chmod a+x *
+
+sudo mkdir vulscan-results
 
 echo "Initial Setup Script Complete"
 echo "Please proceed to Postgres DB setup"
