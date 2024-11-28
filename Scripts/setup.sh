@@ -42,6 +42,12 @@ sudo chmod a+x *
 
 sudo mkdir vulscan-results
 
+cd ../AFSEC-Dashboard-main
+
+sudo apt install npm -y
+
+sudo npm install
+
 echo "Initial Setup Script Complete"
 echo "Please proceed to Postgres DB setup"
 echo "Make sure to set Postgres password on postgres and update md5 setting"
