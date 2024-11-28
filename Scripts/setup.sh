@@ -44,19 +44,7 @@ sudo git clone https://github.com/scipag/vulscan.git
 # Install Postgres + Check Status
 sudo apt install postgresql postgresql-contrib -y
 
-cd ../spiderfoot
-
-sudo chmod a+x *
-
-mkdir scans
-
-cd ../vulscan
-
-sudo chmod a+x *
-
-mkdir vulscan-results
-
-cd ../AFSEC-Dashboard-main
+cd ../AFSEC-Dashboard-main/
 
 sudo apt install npm -y
 
