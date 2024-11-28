@@ -14,6 +14,8 @@ sudo chmod a+x *
 
 sudo mkdir vulscan-results
 
+cd ../AFSEC-Dashboard-main/
+
 # Update Packages
 sudo apt update
 
@@ -43,8 +45,6 @@ sudo git clone https://github.com/scipag/vulscan.git
 
 # Install Postgres + Check Status
 sudo apt install postgresql postgresql-contrib -y
-
-cd ../AFSEC-Dashboard-main/
 
 sudo apt install npm -y
 
