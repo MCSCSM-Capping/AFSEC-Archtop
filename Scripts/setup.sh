@@ -2,6 +2,18 @@
 
 sudo chmod a+x *
 
+cd ../spiderfoot/
+
+sudo chmod a+x *
+
+sudo mkdir scans
+
+cd ../vulscan/
+
+sudo chmod a+x *
+
+sudo mkdir vulscan-results
+
 # Update Packages
 sudo apt update
 
