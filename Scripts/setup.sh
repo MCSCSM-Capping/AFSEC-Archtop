@@ -1,7 +1,5 @@
 #/bin/bash
 
-sudo chmod a+x *
-
 cd ../spiderfoot/
 
 sudo chmod a+x *
