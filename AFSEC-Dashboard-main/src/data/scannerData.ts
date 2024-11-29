@@ -27,7 +27,7 @@ function parsing(index:number, data:string): string {
   let parse = "";
   const regex = /:/g;
 
-  let instance = index; 
+  const instance = index; 
   let counter = 0; 
 
   for (const match of data.matchAll(regex)) {
@@ -39,8 +39,13 @@ function parsing(index:number, data:string): string {
           break; 
       }
   }
-
-  return parse
+  
+  console.log(parse)  
+  if(parse === ''|| parse === " "){
+    parse = "N/A"
+    console.log(parse)
+  }
+  return parse;
 }
 
 // grabs json from api
@@ -58,7 +63,11 @@ function data2Grid(data: dataInterface[]){
     scan_source: item.scan_source,
     scan_date: new Date(item.scan_date),
     scan_info: item.scan_info,
-    protocol: parsing(3, item.scan_info),
+    protocol: parsing(1, item.scan_info),
+    service: parsing(2, item.scan_info),
+    product: parsing(3, item.scan_info),
+    cve: parsing(4, item.scan_info),
+    title: parsing(5, item.scan_info),
 
     // below is not added in yet but these should be ideally mapped as well
     /*
