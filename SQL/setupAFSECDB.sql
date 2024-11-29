@@ -37,7 +37,7 @@ CREATE TABLE main_table (
     Scanner VARCHAR, -- either vulscan or spiderfoot 
     Scan_Source VARCHAR, -- spiderfoot: source column | vulscan: ip + port
     Scan_Date VARCHAR, -- spiderfoot: updated column | vulscan: scan_date
-    Scan_Info VARCHAR, -- spiderfoot: type + module + fp + data | vulscan: host + os + protocol + service + product + id + title
+    Scan_Info VARCHAR -- spiderfoot: type + module + fp + data | vulscan: host + os + protocol + service + product + id + title
 
 );
 

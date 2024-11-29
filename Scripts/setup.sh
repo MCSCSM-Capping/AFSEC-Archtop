@@ -46,7 +46,9 @@ sudo apt install postgresql postgresql-contrib -y
 
 sudo apt install npm -y
 
-sudo npm install
+sudo apt install pip -y
+
+sudo apt install python3-psycopg2 -y
 
 echo "Initial Setup Script Complete"
 echo "Please proceed to Postgres DB setup"
