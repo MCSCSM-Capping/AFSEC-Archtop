@@ -35,7 +35,7 @@ const TopCards = () => {
   let ipsScanned = 0;
   let openPorts = 0;
   const cvesDetected = data.length;
-  const cvePercentage = 0;
+  // const cvePercentage = 0;
 
   // Map to track unique ip's and ports
   const ipMap = new Map<string, Set<number>>(); 
