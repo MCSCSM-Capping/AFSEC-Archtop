@@ -1,19 +1,14 @@
 
-# Docker-based IP Scanning Script Documentation
+# DockerSpiderfoot IP Scanning Script Documentation
 
 This script allows you to scan a list of IP addresses using Spiderfoot inside a Docker container and save the scan results in a specified output directory within the container.
-
-## Prerequisites
-
-- Ensure Docker is installed and running.
-- The Docker container specified (`busy_leakey` by default) should have Spiderfoot and the necessary Python scripts installed.
 
 ## Script Usage
 
 ### Usage Syntax
 
 ```bash
-./script.sh <comma-separated IP addresses>
+./provided_spiderfoot.sh <comma-separated IP addresses>
 ```
 
 - `<comma-separated IP addresses>`: List of IPs to scan, separated by commas (e.g., `192.168.1.1,192.168.1.2`).
@@ -21,7 +16,7 @@ This script allows you to scan a list of IP addresses using Spiderfoot inside a 
 ### Example
 
 ```bash
-./script.sh 192.168.1.1,192.168.1.2
+./provided_spiderfoot.sh 192.168.1.1,192.168.1.2
 ```
 
 ## Script Details
@@ -36,7 +31,7 @@ This script allows you to scan a list of IP addresses using Spiderfoot inside a 
     - For each IP address, the script runs a scan using Spiderfoot within the Docker container.
     - The scan results are saved as JSON files, named according to the IP address scanned.
 
-## Code Explanation
+## Script Code
 
 ```bash
 #!/bin/bash
@@ -54,7 +49,7 @@ IFS=',' read -r -a IP_ARRAY <<< "$1"
 CONTAINER_OUTPUT_DIR="/home/spiderfoot/output"
 
 # Docker container name
-CONTAINER_NAME="busy_leakey"
+CONTAINER_NAME="spiderfoot"
 
 # Current date (used for folder name)
 CURRENT_DATE=$(date +%F)
@@ -76,7 +71,8 @@ for ip in "${IP_ARRAY[@]}"; do
     OUTPUT_FILE="$DATE_OUTPUT_DIR/${ip}.json"
 
     # Run a scan for each IP in the running Docker container
-    sudo docker exec "$CONTAINER_NAME" /bin/sh -c "python3 /home/spiderfoot/sf.py -s "$ip" -u all -o json > "$OUTPUT_FILE""
+    sudo docker exec "$CONTAINER_NAME" /bin/sh -c "python3 /home/spiderfoot/sf.py -s \"$ip\" -u all -o json > \"$OUTPUT_FILE\""
+
 done
 
 echo "All IP scans completed."
@@ -94,14 +90,4 @@ echo "All IP scans completed."
 - Ensure that the specified Docker container has permissions to write to the specified output directory.
 - Modify the script to match any specific configurations or paths for your environment.
 
-## Troubleshooting
 
-- **Permission Denied**: Ensure the script is executed with appropriate permissions (e.g., using `sudo` if necessary).
-- **Docker Container Not Running**: Ensure the specified Docker container (`busy_leakey`) is running before executing the script.
-
-## Additional Information
-
-This script can be run in the background by appending `&` at the end of the command:
-```bash
-./script.sh 192.168.1.1,192.168.1.2 &
-```

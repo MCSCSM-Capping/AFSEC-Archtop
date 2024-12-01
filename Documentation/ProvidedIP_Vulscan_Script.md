@@ -65,7 +65,7 @@ IFS=',' read -r -a IP_ARRAY <<< "$1"
 CUR_DATE=$(date '+%Y-%m-%d')
 
 # Output folder for scan results
-OUTPUT_DIR="/home/developer/vulscan/vulscan-results/$CUR_DATE"
+OUTPUT_DIR="vulscan-results/$CUR_DATE"
 
 # Check if output folder exists for the current date
 if [ ! -d "$OUTPUT_DIR" ]; then
@@ -86,9 +86,8 @@ for ip in "${IP_ARRAY[@]}"; do
     OUTPUT_FILE="$OUTPUT_DIR/${ip}.xml"
 
     # For each IP, run VulScan and output the results to its specific file
-    sudo nmap --script-args='vulscandb=cve.csv,vulscanoutput="ID: {id} - Title: {title} - Link: {link} ({matches})
-"' --script=vulscan/vulscan.nse -sV -p- "$ip" -oX "$OUTPUT_FILE"
-    sudo python3 /home/developer/Nmap-XML-to-CSV/xml2csv.py -f "$OUTPUT_FILE" -csv "$OUTPUT_DIR/${ip}.csv"
+    sudo nmap --script-args='vulscandb=cve.csv,vulscanoutput="ID: {id} - Title: {title} - Link: {link} ({matches})\n"' --script=vulscan/vulscan.nse -sV -p- "$ip" -oX "$OUTPUT_FILE"
+    sudo python3 ../Scripts/xml2csv.py -f "$OUTPUT_FILE" -csv "$OUTPUT_DIR/${ip}.csv"
     sudo rm "$OUTPUT_FILE"
 
 done
