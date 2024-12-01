@@ -123,14 +123,14 @@ const TopCards = () => {
       icon: 'mingcute:report-fill',
     },
     // CVE percentage
-    {
-      id: 4,
-      title: 'CVE Percentage',
-      value: cvePercentage,
-      rate: cvesDetected_RATE.toString() + '%',
-      isUp: true,
-      icon: 'mingcute:heartbeat-fill',
-    },
+    // {
+    //   id: 4,
+    //   title: 'CVE Percentage',
+    //   value: cvePercentage,
+    //   rate: cvesDetected_RATE.toString() + '%',
+    //   isUp: true,
+    //   icon: 'mingcute:heartbeat-fill',
+    // },
   ];
 
   return (
