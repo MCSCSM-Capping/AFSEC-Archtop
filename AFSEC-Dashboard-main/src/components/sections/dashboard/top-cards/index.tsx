@@ -23,53 +23,62 @@ const useScannerData = (): GridRowsProp => {
   return data;
 };
 
-// Statistics at the top of the table
-const cardsData = [
-  // IPS Scanned
-  {
-    id: 1,
-    title: 'IPs Scanned',
-    value: '51.8K',
-    rate: '28.4%',
-    isUp: true,
-    icon: 'mingcute:world-2-fill',
-  },
-  // Open ports found
-  {
-    id: 2,
-    title: 'Open Ports',
-    value: '3.6K',
-    rate: '12.6%',
-    isUp: false,
-    icon: 'mingcute:target-fill',
-  },
-  // CVEs detected
-  {
-    id: 3,
-    title: 'CVEs Detected',
-    value: '756',
-    rate: '3.1%',
-    isUp: true,
-    icon: 'mingcute:report-fill',
-  },
-  // CVE percentage
-  {
-    id: 4,
-    title: 'CVE Percentage',
-    value: '1.49%',
-    rate: '3.1%',
-    isUp: true,
-    icon: 'mingcute:heartbeat-fill',
-  },
-];
 
 // Creating each card
 const TopCards = () => {
   // Testing to see if data obtained
   const data = useScannerData();
   console.log('Scanner data in index.tsx:', data);
+  console.log('Scanner data in index.tsx:', data.length);
 
-  // Potentially do the counters here?... (or a different function)
+  // Values for the cards
+  const ipsScanned = 0;
+  const openPorts = 0;
+  const cvesDetected = data.length;
+  const cvePercentage = 0;
+
+  // Calculate rate
+  
+
+  // Statistics at the top of the table
+  const cardsData = [
+    // IPS Scanned
+    {
+      id: 1,
+      title: 'IPs Scanned',
+      value: ipsScanned,
+      rate: '28.4%',
+      isUp: true,
+      icon: 'mingcute:world-2-fill',
+    },
+    // Open ports found
+    {
+      id: 2,
+      title: 'Open Ports',
+      value: openPorts,
+      rate: '12.6%',
+      isUp: false,
+      icon: 'mingcute:target-fill',
+    },
+    // CVEs detected
+    {
+      id: 3,
+      title: 'CVEs Detected',
+      value: cvesDetected,
+      rate: '3.1%',
+      isUp: true,
+      icon: 'mingcute:report-fill',
+    },
+    // CVE percentage
+    {
+      id: 4,
+      title: 'CVE Percentage',
+      value: cvePercentage,
+      rate: '3.1%',
+      isUp: true,
+      icon: 'mingcute:heartbeat-fill',
+    },
+  ];
 
   return (
     <Grid container spacing={{ xs: 2.5, sm: 3, lg: 3.75 }}>
