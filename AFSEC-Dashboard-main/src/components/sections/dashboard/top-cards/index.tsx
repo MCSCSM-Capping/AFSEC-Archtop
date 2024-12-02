@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { scannerData } from 'data/scannerData';
 import { GridRowsProp } from '@mui/x-data-grid';
 
+
 // Obtaining scanner data
 const useScannerData = (): GridRowsProp => {
   const [data, setData] = useState<GridRowsProp>([]);
@@ -26,18 +27,70 @@ const useScannerData = (): GridRowsProp => {
 
 // Creating each card
 const TopCards = () => {
-  // Testing to see if data obtained
+  // Obtaining scannerData
   const data = useScannerData();
-  console.log('Scanner data in index.tsx:', data);
-  console.log('Scanner data in index.tsx:', data.length);
+  console.log(data);
 
   // Values for the cards
-  const ipsScanned = 0;
-  const openPorts = 0;
+  let ipsScanned = 0;
+  let openPorts = 0;
   const cvesDetected = data.length;
-  const cvePercentage = 0;
+  // const cvePercentage = 0;
 
-  // Calculate rate
+  // Map to track unique ip's and ports
+  const ipMap = new Map<string, Set<number>>(); 
+  
+  for (let i = 0; i < data.length; i++) {
+    const item = data[i];
+    if (item && item.scan_source) {
+      // Split the IP and the port
+      const [ip, portString] = item.scan_source.split(" : ");
+      // Parse port if it exists
+      const port = portString ? parseInt(portString, 10) : null; 
+  
+      // If the IP is not in the map, add it with a new Set for ports
+      if (!ipMap.has(ip)) {
+        console.log("new ip: " + ip);
+        ipMap.set(ip, new Set());
+        ipsScanned++;
+      }
+  
+      // Deal with ports if they exist
+      if (port !== null) {
+
+        // Obtain all of the current ports
+        const ports = ipMap.get(ip)!;
+        
+        // If the port is new for this IP, add it
+        if (!ports.has(port)) {
+          console.log("new port:" + port);
+          ports.add(port);
+          openPorts++;
+        }
+      }
+    }
+  }
+
+  // Initalizing previous values 
+  const [ipsScanned_PREV, setIpsScanned_PREV] = useState(0);
+  const [openPorts_PREV, setOpenPorts_PREV] = useState(0);
+  const [cvesDetected_PREV, setCvesDetected_PREV] = useState(0);
+
+  console.log(ipsScanned_PREV);
+  console.log(openPorts_PREV);
+  console.log(cvesDetected_PREV);
+
+  // Calculate rates
+  const ipsScanned_RATE = ((ipsScanned - ipsScanned_PREV) / ipsScanned_PREV) * 100;
+  const openPorts_RATE = ((openPorts - openPorts_PREV) / openPorts_PREV) * 100;
+  const cvesDetected_RATE = ((cvesDetected - cvesDetected_PREV) / cvesDetected_PREV) * 100;
+
+  // Update previous values
+  useEffect(() => {
+    setIpsScanned_PREV(ipsScanned);
+    setOpenPorts_PREV(openPorts);
+    setCvesDetected_PREV(cvesDetected);
+  }, [ipsScanned, openPorts, cvesDetected]);
   
 
   // Statistics at the top of the table
@@ -47,7 +100,7 @@ const TopCards = () => {
       id: 1,
       title: 'IPs Scanned',
       value: ipsScanned,
-      rate: '28.4%',
+      rate: ipsScanned_RATE.toString() + '%',
       isUp: true,
       icon: 'mingcute:world-2-fill',
     },
@@ -56,7 +109,7 @@ const TopCards = () => {
       id: 2,
       title: 'Open Ports',
       value: openPorts,
-      rate: '12.6%',
+      rate: openPorts_RATE.toString() + '%',
       isUp: false,
       icon: 'mingcute:target-fill',
     },
@@ -65,19 +118,19 @@ const TopCards = () => {
       id: 3,
       title: 'CVEs Detected',
       value: cvesDetected,
-      rate: '3.1%',
+      rate: cvesDetected_RATE.toString() + '%',
       isUp: true,
       icon: 'mingcute:report-fill',
     },
     // CVE percentage
-    {
-      id: 4,
-      title: 'CVE Percentage',
-      value: cvePercentage,
-      rate: '3.1%',
-      isUp: true,
-      icon: 'mingcute:heartbeat-fill',
-    },
+    // {
+    //   id: 4,
+    //   title: 'CVE Percentage',
+    //   value: cvePercentage,
+    //   rate: cvesDetected_RATE.toString() + '%',
+    //   isUp: true,
+    //   icon: 'mingcute:heartbeat-fill',
+    // },
   ];
 
   return (
