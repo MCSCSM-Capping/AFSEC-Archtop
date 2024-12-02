@@ -4,13 +4,9 @@ cd ../spiderfoot/
 
 sudo chmod a+x *
 
-sudo mkdir scans
-
 cd ../vulscan/
 
 sudo chmod a+x *
-
-sudo mkdir vulscan-results
 
 cd ../AFSEC-Dashboard-main/
 
