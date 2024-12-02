@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.94SVN scan initiated Mon Dec  2 05:51:43 2024 as: nmap &quot;-&#45;script-args=vulscandb=cve.csv,vulscanoutput=\&quot;ID: {id} - Title: {title} - Link: {link} ({matches})\\n\&quot;&quot; -&#45;script=vulscan/vulscan.nse -sV -p- -oX /home/developer/vulscan/vulscan-results/2024-12-02/204.11.165.17.xml 204.11.165.17 -->
+<nmaprun scanner="nmap" args="nmap &quot;-&#45;script-args=vulscandb=cve.csv,vulscanoutput=\&quot;ID: {id} - Title: {title} - Link: {link} ({matches})\\n\&quot;&quot; -&#45;script=vulscan/vulscan.nse -sV -p- -oX /home/developer/vulscan/vulscan-results/2024-12-02/204.11.165.17.xml 204.11.165.17" start="1733136703" startstr="Mon Dec  2 05:51:43 2024" version="7.94SVN" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="204.11.165.17" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>

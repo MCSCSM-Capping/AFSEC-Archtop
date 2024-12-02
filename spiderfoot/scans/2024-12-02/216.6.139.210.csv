@@ -1,0 +1,414 @@
+generated,type,data,module,source
+1733147927,IP Address,216.6.139.210,SpiderFoot UI,216.6.139.210
+1733147936,Raw Data from RIRs/APIs,"{'ip': '216.6.139.210', 'ptr_record': None, 'prefixes': [{'prefix': '216.6.128.0/18', 'ip': '216.6.128.0', 'cidr': 18, 'asn': {'asn': 11606, 'name': 'ARCHTOP-FIBER-WVTC02', 'description': 'Archtop Fiber', 'country_code': 'US'}, 'name': 'ARCHTOP-WVTC-216BLK', 'description': 'Archtop Fiber', 'country_code': 'US'}], 'rir_allocation': {'rir_name': 'ARIN', 'country_code': None, 'ip': '216.6.128.0', 'cidr': 18, 'prefix': '216.6.128.0/18', 'date_allocated': '1999-10-26 00:00:00', 'allocation_status': 'allocated'}, 'iana_assignment': {'assignment_status': 'allocated', 'description': 'ARIN', 'whois_server': 'whois.arin.net', 'date_assigned': None}, 'maxmind': {'country_code': None, 'city': None}}",sfp_bgpview,216.6.139.210
+1733147936,BGP AS Membership,11606,sfp_bgpview,216.6.139.210
+1733147936,Netblock Membership,216.6.128.0/18,sfp_bgpview,216.6.139.210
+1733147938,Raw Data from RIRs/APIs,"{'asn': 11606, 'name': 'ARCHTOP-FIBER-WVTC02', 'description_short': 'Archtop Fiber', 'description_full': ['Archtop Fiber'], 'country_code': 'US', 'website': None, 'email_contacts': ['abuse@archtopfiber.com', 'rashba@archtopfiber.com'], 'abuse_contacts': ['abuse@archtopfiber.com'], 'looking_glass': None, 'traffic_estimation': None, 'traffic_ratio': 'Not Disclosed', 'owner_address': ['300 Enterprise Drive', 'Kingston', 'NY', '12401', 'US'], 'rir_allocation': {'rir_name': 'ARIN', 'country_code': 'US', 'date_allocated': '1998-10-19 00:00:00', 'allocation_status': 'assigned'}, 'iana_assignment': {'assignment_status': 'assigned', 'description': 'Assigned by ARIN', 'whois_server': 'whois.arin.net', 'date_assigned': None}, 'date_updated': '2024-11-25 03:48:51'}",sfp_bgpview,11606
+1733147938,Physical Address,"300 Enterprise Drive, Kingston, NY, 12401, US",sfp_bgpview,11606
+1733147943,Netblock Membership,216.6.128.0/18,sfp_ripe,216.6.139.210
+1733147944,Physical Location,"Hamburg, New Jersey, NJ, United States, US",sfp_ipapico,216.6.139.210
+1733147944,Raw Data from RIRs/APIs,"{'ip': '216.6.139.210', 'network': '216.6.136.0/22', 'version': 'IPv4', 'city': 'Hamburg', 'region': 'New Jersey', 'region_code': 'NJ', 'country': 'US', 'country_name': 'United States', 'country_code': 'US', 'country_code_iso3': 'USA', 'country_capital': 'Washington', 'country_tld': '.us', 'continent_code': 'NA', 'in_eu': False, 'postal': '07419', 'latitude': 41.1484, 'longitude': -74.5827, 'timezone': 'America/New_York', 'utc_offset': '-0500', 'country_calling_code': '+1', 'currency': 'USD', 'currency_name': 'Dollar', 'languages': 'en-US,es-US,haw,fr', 'country_area': 9629091.0, 'country_population': 327167434, 'asn': 'AS11606', 'org': 'ARCHTOP-FIBER-WVTC02'}",sfp_ipapico,216.6.139.210
+1733147950,Affiliate - IP Address,216.6.139.208,sfp_dnsneighbor,216.6.139.210
+1733147950,Affiliate - IP Address,216.6.139.209,sfp_dnsneighbor,216.6.139.210
+1733147950,Affiliate - IP Address,216.6.139.211,sfp_dnsneighbor,216.6.139.210
+1733147950,Affiliate - IP Address,216.6.139.212,sfp_dnsneighbor,216.6.139.210
+1733147950,Affiliate - IP Address,216.6.139.213,sfp_dnsneighbor,216.6.139.210
+1733147950,Affiliate - IP Address,216.6.139.214,sfp_dnsneighbor,216.6.139.210
+1733147950,Affiliate - IP Address,216.6.139.215,sfp_dnsneighbor,216.6.139.210
+1733147950,Affiliate - IP Address,216.6.139.216,sfp_dnsneighbor,216.6.139.210
+1733147950,Affiliate - IP Address,216.6.139.217,sfp_dnsneighbor,216.6.139.210
+1733147950,Affiliate - IP Address,216.6.139.218,sfp_dnsneighbor,216.6.139.210
+1733147950,Affiliate - IP Address,216.6.139.219,sfp_dnsneighbor,216.6.139.210
+1733147950,Affiliate - IP Address,216.6.139.220,sfp_dnsneighbor,216.6.139.210
+1733147950,Affiliate - IP Address,216.6.139.221,sfp_dnsneighbor,216.6.139.210
+1733147950,Affiliate - IP Address,216.6.139.222,sfp_dnsneighbor,216.6.139.210
+1733147950,Affiliate - IP Address,216.6.139.223,sfp_dnsneighbor,216.6.139.210
+1733147951,Raw Data from RIRs/APIs,"{""status"": ""ok"", ""act"": [], ""acth"": [], ""pas"": [], ""pash"": [], ""city"": ""Highland Lakes"", ""country"": ""United States"", ""as"": 11606, ""asname"": ""RoadRunner RR-RC-Warwick Valley Telephon"", ""whoisdesc"": ""Alteva Inc (WVTC)"", ""routedesc"": ""RR-RC-Warwick Valley Telephone-Liberty"", ""bgproute"": ""216.6.128.0/18""}",sfp_robtex,216.6.139.210
+1733147951,Open TCP Port,216.6.139.210:443,sfp_sslcert,216.6.139.210
+1733147951,SSL Certificate - Raw Data,"Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            0b:f3:ef:6e:91:b6:40:fa:8f:7e:4f:06:b9:c4:ed:90
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=US, O=DigiCert Inc, CN=DigiCert TLS RSA SHA256 2020 CA1
+        Validity
+            Not Before: Jan 25 00:00:00 2023 GMT
+            Not After : Feb 13 23:59:59 2024 GMT
+        Subject: C=US, ST=Alabama, L=Birmingham, O=Momentum Telecom, Inc., CN=wvtfw.wvtc.com
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: (2048 bit)
+                Modulus:
+                    00:e4:62:6f:28:3a:92:a1:2f:0b:48:6c:a2:e7:67:
+                    2d:40:25:dd:43:ef:94:5d:82:af:e8:0d:af:45:88:
+                    3c:5d:b0:24:ee:2a:e3:ff:00:25:37:45:b8:83:07:
+                    de:cb:be:c1:4f:92:e3:ee:33:5e:c4:4c:68:28:8c:
+                    09:df:94:05:06:7f:9f:07:ba:86:fc:97:48:eb:58:
+                    c1:25:0a:a3:90:6f:6e:61:ed:19:cc:c7:7b:9d:64:
+                    3f:43:78:9d:17:15:e6:f4:42:77:49:c4:96:12:95:
+                    46:2a:84:f5:c6:91:50:04:b0:bc:f8:52:19:6e:c8:
+                    40:78:63:c6:3a:9d:60:ba:3f:44:e0:cc:48:ac:88:
+                    22:c8:79:89:14:54:5c:2b:87:ea:e3:8f:6d:1e:b4:
+                    04:c1:fc:24:21:93:27:30:96:54:6d:56:a6:24:09:
+                    ef:70:eb:a6:d9:bb:39:ad:0f:18:7d:ee:d3:45:1e:
+                    4f:8b:99:1e:83:17:70:74:02:99:fa:0e:b2:fb:a3:
+                    ed:d5:3a:b6:57:f0:32:28:55:56:f6:4d:0b:59:81:
+                    c1:5d:70:fd:3f:1d:7c:54:b7:03:46:c2:5e:6d:53:
+                    33:76:c5:ba:d8:fc:29:ac:c5:82:9b:58:3d:16:a8:
+                    65:01:b2:0f:71:55:9e:d0:b0:2d:e8:1f:7a:10:33:
+                    18:55
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Authority Key Identifier: 
+                keyid:B7:6B:A2:EA:A8:AA:84:8C:79:EA:B4:DA:0F:98:B2:C5:95:76:B9:F4
+
+            X509v3 Subject Key Identifier: 
+                BA:69:81:02:A2:F3:7B:83:74:53:65:AB:1D:00:C4:88:71:D2:54:EA
+            X509v3 Subject Alternative Name: 
+                DNS:wvtfw.wvtc.com
+            X509v3 Key Usage: critical
+                Digital Signature, Key Encipherment
+            X509v3 Extended Key Usage: 
+                TLS Web Server Authentication, TLS Web Client Authentication
+            X509v3 CRL Distribution Points: 
+
+                Full Name:
+                  URI:http://crl3.digicert.com/DigiCertTLSRSASHA2562020CA1-4.crl
+
+                Full Name:
+                  URI:http://crl4.digicert.com/DigiCertTLSRSASHA2562020CA1-4.crl
+
+            X509v3 Certificate Policies: 
+                Policy: 2.23.140.1.2.2
+                  CPS: http://www.digicert.com/CPS
+
+            Authority Information Access: 
+                OCSP - URI:http://ocsp.digicert.com
+                CA Issuers - URI:http://cacerts.digicert.com/DigiCertTLSRSASHA2562020CA1-1.crt
+
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            CT Precertificate SCTs: 
+                Signed Certificate Timestamp:
+                    Version   : v1 (0x0)
+                    Log ID    : EE:CD:D0:64:D5:DB:1A:CE:C5:5C:B7:9D:B4:CD:13:A2:
+                                32:87:46:7C:BC:EC:DE:C3:51:48:59:46:71:1F:B5:9B
+                    Timestamp : Jan 25 16:13:53.845 2023 GMT
+                    Extensions: none
+                    Signature : ecdsa-with-SHA256
+                                30:45:02:21:00:84:98:07:BC:DC:42:72:05:54:E4:56:
+                                EE:CD:32:DD:27:2E:3B:0E:27:BE:82:2C:B3:FD:0A:4F:
+                                27:C7:E1:C6:D1:02:20:69:3D:97:EB:3D:2E:12:11:CA:
+                                85:A8:37:0D:54:D2:15:6B:FE:86:87:04:39:05:B1:BA:
+                                EF:1D:1E:C4:1B:BC:7D
+                Signed Certificate Timestamp:
+                    Version   : v1 (0x0)
+                    Log ID    : 73:D9:9E:89:1B:4C:96:78:A0:20:7D:47:9D:E6:B2:C6:
+                                1C:D0:51:5E:71:19:2A:8C:6B:80:10:7A:C1:77:72:B5
+                    Timestamp : Jan 25 16:13:53.974 2023 GMT
+                    Extensions: none
+                    Signature : ecdsa-with-SHA256
+                                30:45:02:21:00:E6:F0:BB:02:53:CA:86:5F:0D:46:1C:
+                                40:70:94:CA:57:E1:50:78:4E:13:C3:73:1A:5D:D8:CB:
+                                6C:70:81:5C:D6:02:20:42:A3:6C:14:84:74:F8:B5:2F:
+                                6B:C6:F8:E0:00:68:9A:7C:94:39:CD:FE:F1:A4:68:B9:
+                                8D:17:E5:0D:DE:01:16
+                Signed Certificate Timestamp:
+                    Version   : v1 (0x0)
+                    Log ID    : 48:B0:E3:6B:DA:A6:47:34:0F:E5:6A:02:FA:9D:30:EB:
+                                1C:52:01:CB:56:DD:2C:81:D9:BB:BF:AB:39:D8:84:73
+                    Timestamp : Jan 25 16:13:53.912 2023 GMT
+                    Extensions: none
+                    Signature : ecdsa-with-SHA256
+                                30:46:02:21:00:F4:4A:1D:69:73:28:8B:F6:A7:9B:B9:
+                                62:C1:C4:8D:7F:FE:A5:63:6C:72:D3:CC:FB:93:DD:0F:
+                                59:9C:82:4E:BC:02:21:00:9D:D5:F8:07:DC:74:E6:27:
+                                C1:93:D4:E7:3F:DC:95:78:6C:AB:EA:A0:35:63:69:1E:
+                                3F:14:B3:88:B0:E6:3C:35
+    Signature Algorithm: sha256WithRSAEncryption
+         2b:93:41:1d:f4:ca:6d:0b:eb:a0:64:60:9b:ba:04:b4:b1:98:
+         9c:b1:0f:bd:04:6c:98:42:55:61:f5:27:23:89:74:28:1a:a1:
+         f1:df:b9:5b:34:82:ca:5c:5e:fc:18:8b:67:46:11:af:3c:79:
+         7a:9f:a5:ff:85:24:2b:6d:25:ce:2f:1c:25:40:24:0d:23:32:
+         01:ba:e6:b4:33:40:98:ba:51:61:16:d4:04:e2:b2:6f:c3:da:
+         34:d7:1b:b7:3a:a4:ac:96:f0:c6:6b:0e:f8:8b:0a:ef:1e:58:
+         ad:c4:b1:50:c6:c2:40:3c:16:ea:55:67:ab:cb:1a:b6:2d:87:
+         35:6e:a4:99:87:77:af:32:a8:fa:3d:52:3b:81:b5:a3:75:5e:
+         66:b2:ad:df:65:b5:5e:d5:e6:57:d2:c4:bc:1c:da:bd:a1:6a:
+         5d:fa:a0:02:88:e3:7d:40:88:d3:a9:ce:4d:5f:7a:bb:4d:ad:
+         8f:fd:11:92:76:40:b6:5a:8f:f9:c7:59:b9:4c:24:52:9a:da:
+         2f:9b:96:74:fe:60:8c:25:76:e9:25:a3:b7:e6:03:1e:a9:75:
+         ea:f7:31:0c:5f:db:f2:56:b0:44:b4:e9:45:f3:f1:52:16:aa:
+         17:d7:5e:71:31:cb:f5:ba:3f:32:99:47:d1:ac:fd:bc:24:7e:
+         18:9f:22:53
+",sfp_sslcert,216.6.139.210
+1733147951,SSL Certificate - Issued to,"<Name(C=US,ST=Alabama,L=Birmingham,O=Momentum Telecom\, Inc.,CN=wvtfw.wvtc.com)>",sfp_sslcert,216.6.139.210
+1733147951,SSL Certificate - Issued by,"<Name(C=US,O=DigiCert Inc,CN=DigiCert TLS RSA SHA256 2020 CA1)>",sfp_sslcert,216.6.139.210
+1733147951,Co-Hosted Site,wvtfw.wvtc.com,sfp_sslcert,216.6.139.210
+1733147951,SSL Certificate Expired,2024-02-13 23:59:59,sfp_sslcert,216.6.139.210
+1733147953,Affiliate - Email Address,rashba@archtopfiber.com,sfp_email,"{'asn': 11606, 'name': 'ARCHTOP-FIBER-WVTC02', 'description_short': 'Archtop Fiber', 'description_full': ['Archtop Fiber'], 'country_code': 'US', 'website': None, 'email_contacts': ['abuse@archtopfiber.com', 'rashba@archtopfiber.com'], 'abuse_contacts': ['abuse@archtopfiber.com'], 'looking_glass': None, 'traffic_estimation': None, 'traffic_ratio': 'Not Disclosed', 'owner_address': ['300 Enterprise Drive', 'Kingston', 'NY', '12401', 'US'], 'rir_allocation': {'rir_name': 'ARIN', 'country_code': 'US', 'date_allocated': '1998-10-19 00:00:00', 'allocation_status': 'assigned'}, 'iana_assignment': {'assignment_status': 'assigned', 'description': 'Assigned by ARIN', 'whois_server': 'whois.arin.net', 'date_assigned': None}, 'date_updated': '2024-11-25 03:48:51'}"
+1733147953,Affiliate - Email Address,abuse@archtopfiber.com,sfp_email,"{'asn': 11606, 'name': 'ARCHTOP-FIBER-WVTC02', 'description_short': 'Archtop Fiber', 'description_full': ['Archtop Fiber'], 'country_code': 'US', 'website': None, 'email_contacts': ['abuse@archtopfiber.com', 'rashba@archtopfiber.com'], 'abuse_contacts': ['abuse@archtopfiber.com'], 'looking_glass': None, 'traffic_estimation': None, 'traffic_ratio': 'Not Disclosed', 'owner_address': ['300 Enterprise Drive', 'Kingston', 'NY', '12401', 'US'], 'rir_allocation': {'rir_name': 'ARIN', 'country_code': 'US', 'date_allocated': '1998-10-19 00:00:00', 'allocation_status': 'assigned'}, 'iana_assignment': {'assignment_status': 'assigned', 'description': 'Assigned by ARIN', 'whois_server': 'whois.arin.net', 'date_assigned': None}, 'date_updated': '2024-11-25 03:48:51'}"
+1733147954,Raw Data from RIRs/APIs,"{'prefix': '216.6.128.0/18', 'ip': '216.6.128.0', 'cidr': 18, 'asns': [{'asn': 11606, 'name': 'ARCHTOP-FIBER-WVTC02', 'description': 'Archtop Fiber', 'country_code': 'US', 'prefix_upstreams': [{'asn': 12271, 'name': 'TWC-12271-NYC', 'description': 'Charter Communications Inc', 'country_code': 'US'}, {'asn': 3356, 'name': 'LEVEL3', 'description': 'Level 3 Parent, LLC', 'country_code': 'US'}]}], 'name': 'ARCHTOP-WVTC-216BLK', 'description_short': 'Archtop Fiber', 'description_full': ['Archtop Fiber'], 'email_contacts': ['abuse@archtopfiber.com', 'rashba@archtopfiber.com'], 'abuse_contacts': ['abuse@archtopfiber.com'], 'owner_address': ['300 Enterprise Drive', 'Kingston', 'NY', '12401', 'US'], 'country_codes': {'whois_country_code': 'US', 'rir_allocation_country_code': None, 'maxmind_country_code': None}, 'rir_allocation': {'rir_name': 'ARIN', 'country_code': None, 'ip': '216.6.128.0', 'cidr': 18, 'prefix': '216.6.128.0/18', 'date_allocated': '1999-10-26 00:00:00', 'allocation_status': 'allocated'}, 'iana_assignment': {'assignment_status': 'assigned', 'description': 'Assigned by ARIN', 'whois_server': 'whois.arin.net', 'date_assigned': None}, 'maxmind': {'country_code': None, 'city': None}, 'related_prefixes': [], 'date_updated': '2024-11-15 13:21:01'}",sfp_bgpview,216.6.128.0/18
+1733147954,Physical Address,"300 Enterprise Drive, Kingston, NY, 12401, US",sfp_bgpview,216.6.128.0/18
+1733147958,BGP AS Membership,46887,sfp_ripe,216.6.128.0/18
+1733147961,Physical Coordinates,"41.9701472,-73.998308",sfp_openstreetmap,"300 Enterprise Drive, Kingston, NY, 12401, US"
+1733147967,Company Name,"Momentum Telecom\, Inc.",sfp_company,"<Name(C=US,ST=Alabama,L=Birmingham,O=Momentum Telecom\, Inc.,CN=wvtfw.wvtc.com)>"
+1733147967,Country Name,United States,sfp_countryname,"Hamburg, New Jersey, NJ, United States, US"
+1733147969,Raw Data from RIRs/APIs,"{'asn': 46887, 'name': 'CROWNCASTLE-AS46887', 'description_short': 'Crown Castle Fiber LLC', 'description_full': ['Crown Castle Fiber LLC'], 'country_code': 'US', 'website': 'https://www.crowncastle.com/', 'email_contacts': ['ipadmin@crowncastle.com', 'fibersupport@crowncastle.com', 'abuse@crowncastle.com'], 'abuse_contacts': ['abuse@crowncastle.com'], 'looking_glass': None, 'traffic_estimation': None, 'traffic_ratio': None, 'owner_address': ['8020 Katy Freeway', 'Houston', 'TX', '77024', 'US'], 'rir_allocation': {'rir_name': 'ARIN', 'country_code': 'US', 'date_allocated': '2009-04-13 00:00:00', 'allocation_status': 'assigned'}, 'iana_assignment': {'assignment_status': 'assigned', 'description': 'Assigned by ARIN', 'whois_server': 'whois.arin.net', 'date_assigned': None}, 'date_updated': '2024-11-23 04:26:55'}",sfp_bgpview,46887
+1733147969,Physical Address,"8020 Katy Freeway, Houston, TX, 77024, US",sfp_bgpview,46887
+1733147974,Physical Coordinates,"29.783217014492752,-95.48247521014493",sfp_openstreetmap,"8020 Katy Freeway, Houston, TX, 77024, US"
+1733147974,Physical Coordinates,"29.784427061224488,-95.48046891836735",sfp_openstreetmap,"8020 Katy Freeway, Houston, TX, 77024, US"
+1733147986,Affiliate - Email Address,rashba@archtopfiber.com,sfp_email,"{'prefix': '216.6.128.0/18', 'ip': '216.6.128.0', 'cidr': 18, 'asns': [{'asn': 11606, 'name': 'ARCHTOP-FIBER-WVTC02', 'description': 'Archtop Fiber', 'country_code': 'US', 'prefix_upstreams': [{'asn': 12271, 'name': 'TWC-12271-NYC', 'description': 'Charter Communications Inc', 'country_code': 'US'}, {'asn': 3356, 'name': 'LEVEL3', 'description': 'Level 3 Parent, LLC', 'country_code': 'US'}]}], 'name': 'ARCHTOP-WVTC-216BLK', 'description_short': 'Archtop Fiber', 'description_full': ['Archtop Fiber'], 'email_contacts': ['abuse@archtopfiber.com', 'rashba@archtopfiber.com'], 'abuse_contacts': ['abuse@archtopfiber.com'], 'owner_address': ['300 Enterprise Drive', 'Kingston', 'NY', '12401', 'US'], 'country_codes': {'whois_country_code': 'US', 'rir_allocation_country_code': None, 'maxmind_country_code': None}, 'rir_allocation': {'rir_name': 'ARIN', 'country_code': None, 'ip': '216.6.128.0', 'cidr': 18, 'prefix': '216.6.128.0/18', 'date_allocated': '1999-10-26 00:00:00', 'allocation_status': 'allocated'}, 'iana_assignment': {'assignment_status': 'assigned', 'description': 'Assigned by ARIN', 'whois_server': 'whois.arin.net', 'date_assigned': None}, 'maxmind': {'country_code': None, 'city': None}, 'related_prefixes': [], 'date_updated': '2024-11-15 13:21:01'}"
+1733147986,Affiliate - Email Address,abuse@archtopfiber.com,sfp_email,"{'prefix': '216.6.128.0/18', 'ip': '216.6.128.0', 'cidr': 18, 'asns': [{'asn': 11606, 'name': 'ARCHTOP-FIBER-WVTC02', 'description': 'Archtop Fiber', 'country_code': 'US', 'prefix_upstreams': [{'asn': 12271, 'name': 'TWC-12271-NYC', 'description': 'Charter Communications Inc', 'country_code': 'US'}, {'asn': 3356, 'name': 'LEVEL3', 'description': 'Level 3 Parent, LLC', 'country_code': 'US'}]}], 'name': 'ARCHTOP-WVTC-216BLK', 'description_short': 'Archtop Fiber', 'description_full': ['Archtop Fiber'], 'email_contacts': ['abuse@archtopfiber.com', 'rashba@archtopfiber.com'], 'abuse_contacts': ['abuse@archtopfiber.com'], 'owner_address': ['300 Enterprise Drive', 'Kingston', 'NY', '12401', 'US'], 'country_codes': {'whois_country_code': 'US', 'rir_allocation_country_code': None, 'maxmind_country_code': None}, 'rir_allocation': {'rir_name': 'ARIN', 'country_code': None, 'ip': '216.6.128.0', 'cidr': 18, 'prefix': '216.6.128.0/18', 'date_allocated': '1999-10-26 00:00:00', 'allocation_status': 'allocated'}, 'iana_assignment': {'assignment_status': 'assigned', 'description': 'Assigned by ARIN', 'whois_server': 'whois.arin.net', 'date_assigned': None}, 'maxmind': {'country_code': None, 'city': None}, 'related_prefixes': [], 'date_updated': '2024-11-15 13:21:01'}"
+1733147992,Affiliate - Email Address,abuse@crowncastle.com,sfp_email,"{'asn': 46887, 'name': 'CROWNCASTLE-AS46887', 'description_short': 'Crown Castle Fiber LLC', 'description_full': ['Crown Castle Fiber LLC'], 'country_code': 'US', 'website': 'https://www.crowncastle.com/', 'email_contacts': ['ipadmin@crowncastle.com', 'fibersupport@crowncastle.com', 'abuse@crowncastle.com'], 'abuse_contacts': ['abuse@crowncastle.com'], 'looking_glass': None, 'traffic_estimation': None, 'traffic_ratio': None, 'owner_address': ['8020 Katy Freeway', 'Houston', 'TX', '77024', 'US'], 'rir_allocation': {'rir_name': 'ARIN', 'country_code': 'US', 'date_allocated': '2009-04-13 00:00:00', 'allocation_status': 'assigned'}, 'iana_assignment': {'assignment_status': 'assigned', 'description': 'Assigned by ARIN', 'whois_server': 'whois.arin.net', 'date_assigned': None}, 'date_updated': '2024-11-23 04:26:55'}"
+1733147992,Affiliate - Email Address,ipadmin@crowncastle.com,sfp_email,"{'asn': 46887, 'name': 'CROWNCASTLE-AS46887', 'description_short': 'Crown Castle Fiber LLC', 'description_full': ['Crown Castle Fiber LLC'], 'country_code': 'US', 'website': 'https://www.crowncastle.com/', 'email_contacts': ['ipadmin@crowncastle.com', 'fibersupport@crowncastle.com', 'abuse@crowncastle.com'], 'abuse_contacts': ['abuse@crowncastle.com'], 'looking_glass': None, 'traffic_estimation': None, 'traffic_ratio': None, 'owner_address': ['8020 Katy Freeway', 'Houston', 'TX', '77024', 'US'], 'rir_allocation': {'rir_name': 'ARIN', 'country_code': 'US', 'date_allocated': '2009-04-13 00:00:00', 'allocation_status': 'assigned'}, 'iana_assignment': {'assignment_status': 'assigned', 'description': 'Assigned by ARIN', 'whois_server': 'whois.arin.net', 'date_assigned': None}, 'date_updated': '2024-11-23 04:26:55'}"
+1733147992,Affiliate - Email Address,fibersupport@crowncastle.com,sfp_email,"{'asn': 46887, 'name': 'CROWNCASTLE-AS46887', 'description_short': 'Crown Castle Fiber LLC', 'description_full': ['Crown Castle Fiber LLC'], 'country_code': 'US', 'website': 'https://www.crowncastle.com/', 'email_contacts': ['ipadmin@crowncastle.com', 'fibersupport@crowncastle.com', 'abuse@crowncastle.com'], 'abuse_contacts': ['abuse@crowncastle.com'], 'looking_glass': None, 'traffic_estimation': None, 'traffic_ratio': None, 'owner_address': ['8020 Katy Freeway', 'Houston', 'TX', '77024', 'US'], 'rir_allocation': {'rir_name': 'ARIN', 'country_code': 'US', 'date_allocated': '2009-04-13 00:00:00', 'allocation_status': 'assigned'}, 'iana_assignment': {'assignment_status': 'assigned', 'description': 'Assigned by ARIN', 'whois_server': 'whois.arin.net', 'date_assigned': None}, 'date_updated': '2024-11-23 04:26:55'}"
+1733148013,Open TCP Port,216.6.139.210:443,sfp_portscan_tcp,216.6.139.210
+1733148013,Open TCP Port,216.6.139.210:80,sfp_portscan_tcp,216.6.139.210
+1733148040,Co-Hosted Site - Domain Name,wvtc.com,sfp_dnsresolve,wvtfw.wvtc.com
+1733148041,Country Name,United States,sfp_countryname,wvtc.com
+1733148041,Co-Hosted Site - Domain Whois,"   Domain Name: WVTC.COM
+   Registry Domain ID: 4421_DOMAIN_COM-VRSN
+   Registrar WHOIS Server: whois.godaddy.com
+   Registrar URL: http://www.godaddy.com
+   Updated Date: 2024-01-31T18:34:47Z
+   Creation Date: 1995-12-05T05:00:00Z
+   Registry Expiry Date: 2024-12-04T05:00:00Z
+   Registrar: GoDaddy.com, LLC
+   Registrar IANA ID: 146
+   Registrar Abuse Contact Email: abuse@godaddy.com
+   Registrar Abuse Contact Phone: 480-624-2505
+   Domain Status: clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited
+   Domain Status: clientRenewProhibited https://icann.org/epp#clientRenewProhibited
+   Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+   Domain Status: clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited
+   Name Server: NS.WARWICK.NET
+   Name Server: NS2.WARWICK.NET
+   DNSSEC: unsigned
+   URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
+>>> Last update of whois database: 2024-12-02T14:00:23Z <<<
+
+For more information on Whois status codes, please visit https://icann.org/epp
+
+NOTICE: The expiration date displayed in this record is the date the
+registrar's sponsorship of the domain name registration in the registry is
+currently set to expire. This date does not necessarily reflect the expiration
+date of the domain name registrant's agreement with the sponsoring
+registrar.  Users may consult the sponsoring registrar's Whois database to
+view the registrar's reported date of expiration for this registration.
+
+TERMS OF USE: You are not authorized to access or query our Whois
+database through the use of electronic processes that are high-volume and
+automated except as reasonably necessary to register domain names or
+modify existing registrations; the Data in VeriSign Global Registry
+Services' (""VeriSign"") Whois database is provided by VeriSign for
+information purposes only, and to assist persons in obtaining information
+about or related to a domain name registration record. VeriSign does not
+guarantee its accuracy. By submitting a Whois query, you agree to abide
+by the following terms of use: You agree that you may use this Data only
+for lawful purposes and that under no circumstances will you use this Data
+to: (1) allow, enable, or otherwise support the transmission of mass
+unsolicited, commercial advertising or solicitations via e-mail, telephone,
+or facsimile; or (2) enable high volume, automated, electronic processes
+that apply to VeriSign (or its computer systems). The compilation,
+repackaging, dissemination or other use of this Data is expressly
+prohibited without the prior written consent of VeriSign. You agree not to
+use electronic processes that are automated and high-volume to access or
+query the Whois database except as reasonably necessary to register
+domain names or modify existing registrations. VeriSign reserves the right
+to restrict your access to the Whois database in its sole discretion to ensure
+operational stability.  VeriSign may restrict or terminate your access to the
+Whois database for failure to abide by these terms of use. VeriSign
+reserves the right to modify these terms at any time.
+
+The Registry database contains ONLY .COM, .NET, .EDU domains and
+Registrars.
+Domain Name: wvtc.com
+Registry Domain ID: 4421_DOMAIN_COM-VRSN
+Registrar WHOIS Server: whois.godaddy.com
+Registrar URL: https://www.godaddy.com
+Updated Date: 2023-11-08T00:26:36Z
+Creation Date: 1995-12-05T00:00:00Z
+Registrar Registration Expiration Date: 2024-12-04T00:00:00Z
+Registrar: GoDaddy.com, LLC
+Registrar IANA ID: 146
+Registrar Abuse Contact Email: abuse@godaddy.com
+Registrar Abuse Contact Phone: +1.4806242505
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Domain Status: clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited
+Domain Status: clientRenewProhibited https://icann.org/epp#clientRenewProhibited
+Domain Status: clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited
+Registry Registrant ID: Not Available From Registry
+Registrant Name: Registration Private
+Registrant Organization: Domains By Proxy, LLC
+Registrant Street: DomainsByProxy.com
+Registrant Street: 100 S. Mill Ave, Suite 1600
+Registrant City: Tempe
+Registrant State/Province: Arizona
+Registrant Postal Code: 85281
+Registrant Country: US
+Registrant Phone: +1.4806242599
+Registrant Phone Ext:
+Registrant Fax: 
+Registrant Fax Ext:
+Registrant Email: Select Contact Domain Holder link at https://www.godaddy.com/whois/results.aspx?domain=wvtc.com
+Registry Tech ID: Not Available From Registry
+Tech Name: Registration Private
+Tech Organization: Domains By Proxy, LLC
+Tech Street: DomainsByProxy.com
+Tech Street: 100 S. Mill Ave, Suite 1600
+Tech City: Tempe
+Tech State/Province: Arizona
+Tech Postal Code: 85281
+Tech Country: US
+Tech Phone: +1.4806242599
+Tech Phone Ext:
+Tech Fax: 
+Tech Fax Ext:
+Tech Email: Select Contact Domain Holder link at https://www.godaddy.com/whois/results.aspx?domain=wvtc.com
+Name Server: NS.WARWICK.NET
+Name Server: NS2.WARWICK.NET
+DNSSEC: unsigned
+URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
+>>> Last update of WHOIS database: 2024-12-02T14:00:41Z <<<
+For more information on Whois status codes, please visit https://icann.org/epp
+
+TERMS OF USE: The data contained in this registrar's Whois database, while believed by the
+registrar to be reliable, is provided ""as is"" with no guarantee or warranties regarding its
+accuracy. This information is provided for the sole purpose of assisting you in obtaining
+information about domain name registration records. Any use of this data for any other purpose
+is expressly forbidden without the prior written permission of this registrar. By submitting
+an inquiry, you agree to these terms and limitations of warranty. In particular, you agree not
+to use this data to allow, enable, or otherwise support the dissemination or collection of this
+data, in part or in its entirety, for any purpose, such as transmission by e-mail, telephone,
+postal mail, facsimile or other means of mass unsolicited, commercial advertising or solicitations
+of any kind, including spam. You further agree not to use this data to enable high volume, automated
+or robotic electronic processes designed to collect or compile this data for any purpose, including
+mining this data for your own personal or commercial purposes. Failure to comply with these terms
+may result in termination of access to the Whois database. These terms may be subject to modification
+at any time without notice.
+
+",sfp_whois,wvtc.com
+1733148042,Affiliate - Email Address,abuse@godaddy.com,sfp_email,"   Domain Name: WVTC.COM
+   Registry Domain ID: 4421_DOMAIN_COM-VRSN
+   Registrar WHOIS Server: whois.godaddy.com
+   Registrar URL: http://www.godaddy.com
+   Updated Date: 2024-01-31T18:34:47Z
+   Creation Date: 1995-12-05T05:00:00Z
+   Registry Expiry Date: 2024-12-04T05:00:00Z
+   Registrar: GoDaddy.com, LLC
+   Registrar IANA ID: 146
+   Registrar Abuse Contact Email: abuse@godaddy.com
+   Registrar Abuse Contact Phone: 480-624-2505
+   Domain Status: clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited
+   Domain Status: clientRenewProhibited https://icann.org/epp#clientRenewProhibited
+   Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+   Domain Status: clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited
+   Name Server: NS.WARWICK.NET
+   Name Server: NS2.WARWICK.NET
+   DNSSEC: unsigned
+   URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
+>>> Last update of whois database: 2024-12-02T14:00:23Z <<<
+
+For more information on Whois status codes, please visit https://icann.org/epp
+
+NOTICE: The expiration date displayed in this record is the date the
+registrar's sponsorship of the domain name registration in the registry is
+currently set to expire. This date does not necessarily reflect the expiration
+date of the domain name registrant's agreement with the sponsoring
+registrar.  Users may consult the sponsoring registrar's Whois database to
+view the registrar's reported date of expiration for this registration.
+
+TERMS OF USE: You are not authorized to access or query our Whois
+database through the use of electronic processes that are high-volume and
+automated except as reasonably necessary to register domain names or
+modify existing registrations; the Data in VeriSign Global Registry
+Services' (""VeriSign"") Whois database is provided by VeriSign for
+information purposes only, and to assist persons in obtaining information
+about or related to a domain name registration record. VeriSign does not
+guarantee its accuracy. By submitting a Whois query, you agree to abide
+by the following terms of use: You agree that you may use this Data only
+for lawful purposes and that under no circumstances will you use this Data
+to: (1) allow, enable, or otherwise support the transmission of mass
+unsolicited, commercial advertising or solicitations via e-mail, telephone,
+or facsimile; or (2) enable high volume, automated, electronic processes
+that apply to VeriSign (or its computer systems). The compilation,
+repackaging, dissemination or other use of this Data is expressly
+prohibited without the prior written consent of VeriSign. You agree not to
+use electronic processes that are automated and high-volume to access or
+query the Whois database except as reasonably necessary to register
+domain names or modify existing registrations. VeriSign reserves the right
+to restrict your access to the Whois database in its sole discretion to ensure
+operational stability.  VeriSign may restrict or terminate your access to the
+Whois database for failure to abide by these terms of use. VeriSign
+reserves the right to modify these terms at any time.
+
+The Registry database contains ONLY .COM, .NET, .EDU domains and
+Registrars.
+Domain Name: wvtc.com
+Registry Domain ID: 4421_DOMAIN_COM-VRSN
+Registrar WHOIS Server: whois.godaddy.com
+Registrar URL: https://www.godaddy.com
+Updated Date: 2023-11-08T00:26:36Z
+Creation Date: 1995-12-05T00:00:00Z
+Registrar Registration Expiration Date: 2024-12-04T00:00:00Z
+Registrar: GoDaddy.com, LLC
+Registrar IANA ID: 146
+Registrar Abuse Contact Email: abuse@godaddy.com
+Registrar Abuse Contact Phone: +1.4806242505
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Domain Status: clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited
+Domain Status: clientRenewProhibited https://icann.org/epp#clientRenewProhibited
+Domain Status: clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited
+Registry Registrant ID: Not Available From Registry
+Registrant Name: Registration Private
+Registrant Organization: Domains By Proxy, LLC
+Registrant Street: DomainsByProxy.com
+Registrant Street: 100 S. Mill Ave, Suite 1600
+Registrant City: Tempe
+Registrant State/Province: Arizona
+Registrant Postal Code: 85281
+Registrant Country: US
+Registrant Phone: +1.4806242599
+Registrant Phone Ext:
+Registrant Fax: 
+Registrant Fax Ext:
+Registrant Email: Select Contact Domain Holder link at https://www.godaddy.com/whois/results.aspx?domain=wvtc.com
+Registry Tech ID: Not Available From Registry
+Tech Name: Registration Private
+Tech Organization: Domains By Proxy, LLC
+Tech Street: DomainsByProxy.com
+Tech Street: 100 S. Mill Ave, Suite 1600
+Tech City: Tempe
+Tech State/Province: Arizona
+Tech Postal Code: 85281
+Tech Country: US
+Tech Phone: +1.4806242599
+Tech Phone Ext:
+Tech Fax: 
+Tech Fax Ext:
+Tech Email: Select Contact Domain Holder link at https://www.godaddy.com/whois/results.aspx?domain=wvtc.com
+Name Server: NS.WARWICK.NET
+Name Server: NS2.WARWICK.NET
+DNSSEC: unsigned
+URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
+>>> Last update of WHOIS database: 2024-12-02T14:00:41Z <<<
+For more information on Whois status codes, please visit https://icann.org/epp
+
+TERMS OF USE: The data contained in this registrar's Whois database, while believed by the
+registrar to be reliable, is provided ""as is"" with no guarantee or warranties regarding its
+accuracy. This information is provided for the sole purpose of assisting you in obtaining
+information about domain name registration records. Any use of this data for any other purpose
+is expressly forbidden without the prior written permission of this registrar. By submitting
+an inquiry, you agree to these terms and limitations of warranty. In particular, you agree not
+to use this data to allow, enable, or otherwise support the dissemination or collection of this
+data, in part or in its entirety, for any purpose, such as transmission by e-mail, telephone,
+postal mail, facsimile or other means of mass unsolicited, commercial advertising or solicitations
+of any kind, including spam. You further agree not to use this data to enable high volume, automated
+or robotic electronic processes designed to collect or compile this data for any purpose, including
+mining this data for your own personal or commercial purposes. Failure to comply with these terms
+may result in termination of access to the Whois database. These terms may be subject to modification
+at any time without notice.
+
+"

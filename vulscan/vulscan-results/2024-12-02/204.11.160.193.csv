@@ -1,0 +1,30 @@
+IP,Host,OS,Proto,Port,Service,Product,Service FP,NSE Script ID,NSE Script Output,Notes
+204.11.160.193,,,tcp,2000,tcpwrapped,,,,
+204.11.160.193,,,tcp,5060,tcpwrapped,,,,
+204.11.160.193,,,tcp,8020,intu-ec-svcdisc,,"SF-Port8020-TCP:V=7.94SVN%I=7%D=12/2%Time=674D8B30%P=x86_64-pc-linux-gnu%r(GenericLines,1298,""HTTP/1\.1\x20200\x20OK\r\nContent-Length:\x204491\r\nConnection:\x20close\r\nCache-Control:\x20no-cache\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nX-Frame-Options:\x20SAMEORIGIN\r\nX-XSS-Protection:\x201;\x20mode=block\r\nX-Content-Type-Options:\x20nosniff\r\nContent-Security-Policy:\x20frame-ancestors\x20'self'\r\n\r\n<!DOCTYPE\x20html>\n<html\x20lang=\""en\"">\n\x20\x20\x20\x20<head>\n\x20\x20\x20\x20\x20\x20\x20\x20<meta\x20charset=\""UTF-8\"">\n\x20\x20\x20\x20\x20\x20\x20\x20<meta\x20http-equiv=\""X-UA-Compatible\""\x20content=\""IE=8;\x20IE=EDGE\"">\n\x20\x20\x20\x20\x20\x20\x20\x20<meta\x20name=\""viewport\""\x20content=\""width=device-width,\x20initial-scale=1\"">\n\x20\x20\x20\x20\x20\x20\x20\x20<style\x20type=\""text/css\"">\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20body\x20{\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20height:\x20100%;\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-family:\x20Helvetica,\x20Arial,\x20sans-serif;\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#6a6a6a;\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20margin:\x200;\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20display:\x20flex;\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20align-items:\x20center;\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20justify-content:\x20center;\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20input\[type=date\],\x20input\[type=email\],\x20input\[type=number\],\x20input\[type=password\]"")%r(GetRequest,1298,""HTTP/1\.1\x20200\x20OK\r\nContent-Length:\x204491\r\nConnection:\x20close\r\nCache-Control:\x20no-cache\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nX-Frame-Options:\x20SAMEORIGIN\r\nX-XSS-Protection:\x201;\x20mode=block\r\nX-Content-Type-Options:\x20nosniff\r\nContent-Security-Policy:\x20frame-ancestors\x20'self'\r\n\r\n<!DOCTYPE\x20html>\n<html\x20lang=\""en\"">\n\x20\x20\x20\x20<head>\n\x20\x20\x20\x20\x20\x20\x20\x20<meta\x20charset=\""UTF-8\"">\n\x20\x20\x20\x20\x20\x20\x20\x20<meta\x20http-equiv=\""X-UA-Compatible\""\x20content=\""IE=8;\x20IE=EDGE\"">\n\x20\x20\x20\x20\x20\x20\x20\x20<meta\x20name=\""viewport\""\x20content=\""width=device-width,\x20initial-scale=1\"">\n\x20\x20\x20\x20\x20\x20\x20\x20<style\x20type=\""text/css\"">\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20body\x20{\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20height:\x20100%;\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-family:\x20Helvetica,\x20Arial,\x20sans-serif;\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#6a6a6a;\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20margin:\x200;\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20display:\x20flex;\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20align-items:\x20center;\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20justify-content:\x20center;\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20input\[type=date\],\x20input\[type=email\],\x20input\[type=number\],\x20input\[type=password\]"");",fingerprint-strings,"
+  GenericLines, GetRequest: 
+    HTTP/1.1 200 OK
+    Content-Length: 4491
+    Connection: close
+    Cache-Control: no-cache
+    Content-Type: text/html; charset=utf-8
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Content-Security-Policy: frame-ancestors 'self'
+    <!DOCTYPE html>
+    <html lang=""en"">
+    <head>
+    <meta charset=""UTF-8"">
+    <meta http-equiv=""X-UA-Compatible"" content=""IE=8; IE=EDGE"">
+    <meta name=""viewport"" content=""width=device-width, initial-scale=1"">
+    <style type=""text/css"">
+    body {
+    height: 100%;
+    font-family: Helvetica, Arial, sans-serif;
+    color: #6a6a6a;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    input[type=date], input[type=email], input[type=number], input[type=password]"
