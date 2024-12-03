@@ -62,12 +62,12 @@ function data2Grid(data: dataInterface[]){
     scanner: item.scanner,
     scan_source: item.scan_source,
     scan_date: new Date(item.scan_date),
-    scan_info: item.scan_info,
     protocol: parsing(1, item.scan_info),
     service: parsing(2, item.scan_info),
     product: parsing(3, item.scan_info),
     cve: parsing(4, item.scan_info),
     title: parsing(5, item.scan_info),
+    scan_info: item.scan_info,
 
     // below is not added in yet but these should be ideally mapped as well
     /*

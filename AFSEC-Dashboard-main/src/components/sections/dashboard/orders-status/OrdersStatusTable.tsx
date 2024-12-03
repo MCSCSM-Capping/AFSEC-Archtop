@@ -77,7 +77,7 @@ const CVETable = ({ searchText }: OrdersStatusTableProps) => {
     // ID
     {
      field: 'id',
-     headerName: 'id',
+     headerName: 'ID',
      minWidth: 80,
      flex: 1,
      resizable: false,
@@ -116,10 +116,65 @@ const CVETable = ({ searchText }: OrdersStatusTableProps) => {
         </Stack>
       ),
     },
-    // Scan information found
+    // Scan protocol
+    {
+      field: 'protocol',
+      headerName: 'Protocol',
+      headerAlign: 'left',
+      align: 'right',
+      sortable: false,
+      minWidth: 120,
+      flex: 4,
+      resizable: false,
+    },
+    // Scan service
+    {
+      field: 'service',
+      headerName: 'Service',
+      headerAlign: 'left',
+      align: 'right',
+      sortable: false,
+      minWidth: 120,
+      flex: 4,
+      resizable: false,
+    },
+    // Scan product
+    {
+      field: 'product',
+      headerName: 'Product',
+      headerAlign: 'left',
+      align: 'right',
+      sortable: false,
+      minWidth: 120,
+      flex: 4,
+      resizable: false,
+    },
+    // Scan CVE ID
+    {
+      field: 'cve',
+      headerName: 'CVE ID',
+      headerAlign: 'left',
+      align: 'right',
+      sortable: false,
+      minWidth: 120,
+      flex: 4,
+      resizable: false,
+    },
+    // Scan title
+    {
+      field: 'title',
+      headerName: 'CVE Description',
+      headerAlign: 'left',
+      align: 'right',
+      sortable: false,
+      minWidth: 120,
+      flex: 4,
+      resizable: false,
+    },
+    // Scan information
     {
       field: 'scan_info',
-      headerName: 'Scan Info',
+      headerName: 'Other Information',
       headerAlign: 'left',
       align: 'right',
       sortable: false,
