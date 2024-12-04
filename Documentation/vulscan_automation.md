@@ -79,7 +79,7 @@ crontab -e
 You may be prompted to enter a number to select which text editor you would like to use. I recommend choosing 1 for nano.
 
 ### Add the Cron Job:
-Add the following line to the crontab to run the script every day at 9:40 AM:
+Add the following line to the crontab to run the script every day at 2:00 AM:
 ```bash
 0 2 * * * ~/AFSEC-Archtop/vulscanscript.sh
 ```
