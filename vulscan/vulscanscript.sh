@@ -25,19 +25,19 @@ while read -r ip; do
 
     # for each ip run vulscan and output the results to its specific file
     # range or subnet
-    if [[ "$ip"=~ / ]]; then
+    if [[ "$ip" =~ / ]]; then
         IFS='/' read -r start_ip cidr <<< "$ip"  # grab the start ip and the cidr
         IFS='.' read -r one two three four <<< "$start_ip"  # parse the start ip
         # check range
         if [[ "$cidr" == "8" ]]; then
             # a.0.0.0 - a.255.255.255
-            end_ip="$one.255.255.255"
+            end_ip="255.255.255"
         elif [[ "$cidr" == "16" ]]; then
             # a.b.0.0 - a.b.255.255
-            end_ip="$one.two.255.255"
+            end_ip="255.255"
         elif [[ "$cidr" == "24" ]]; then
             # a.b.c.0 - a.b.c.255
-            end_ip="$one.two.three.255"
+            end_ip="$255"
         else
             echo unsupported range...
         fi
