@@ -14,8 +14,9 @@ def main():
     user = "postgres"   # postgresql user
     db = "afsec"    # postgresql database
     table = "vulscan_data"  # postgresql table
-    id_pattern = r"ID:(.*)- Title:"
-    title_pattern = r"Title:(.*)- Link:"
+    id_pattern = r"ID:(.*)- Title:" # regex pattern for ids
+    title_pattern = r"Title:(.*)- Link:"    # regex pattern for titles
+    ip_pattern = r"^\d{1,3}(?:\.\d{1,3}){3}," # regex pattern for an ip at the beginning of a line followed by a comma
 
     # connect to the postgresql db
     conn = psycopg2.connect(database = db,
@@ -33,8 +34,8 @@ def main():
         cve_found = False   # flag to check for cevs
         with open(filepath, 'r') as csv_file:   # open it
             for i, line in enumerate(csv_file):    # read line by line
-                # grab ip, host, os, protocol, port, state, service, version (row: 2) 
-                if i == 1:
+                # grab ip, host, os, protocol, port, state, service, version by checking if the line starts with "ip," 
+                if re.search(ip_pattern, line):
                     # split headers line up by commas and extract necessary values
                     headers = line.split(',')
                     cev_ip=headers[0].strip()
@@ -44,8 +45,9 @@ def main():
                     cev_port=headers[4].strip()
                     cev_service=headers[5].strip()
                     cev_product=headers[6].strip()
-                # parse cve from line 3 until a blank line
-                elif i >= 2 and line:
+                    
+                # parse cve id and title
+                elif re.search(id_pattern, line) and re.search(title_pattern, line):
                     id_match = re.search(id_pattern, line)
                     title_match = re.search(title_pattern, line)
                     if id_match and title_match:
@@ -75,3 +77,7 @@ def main():
 # start script
 if __name__ == "__main__":
     main()
+
+
+    #regex pattern for an ip at the beginning of a line with the comma at the end of it
+    # if different update global ip variable
