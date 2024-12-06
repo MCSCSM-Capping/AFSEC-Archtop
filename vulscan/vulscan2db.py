@@ -45,7 +45,7 @@ def main():
                     cev_port=headers[4].strip()
                     cev_service=headers[5].strip()
                     cev_product=headers[6].strip()
-                    
+                    cve_found = False   # flag to check for cevs
                 # parse cve id and title
                 elif re.search(id_pattern, line) and re.search(title_pattern, line):
                     id_match = re.search(id_pattern, line)
@@ -61,14 +61,14 @@ def main():
                         # execute the query
                         cursor.execute(insert_query, (cev_ip, cev_host, cev_os, cev_protocol, cev_port, cev_service, cev_product, cev_id, cev_title, cur_date))
                         cve_found = True
-            # if no cevs are found just input that into db
-            if not cve_found:
-                insert_query = """
-                    INSERT INTO vulscan_data (ip, host, os, protocol, port, service, product, id, title, scan_date)
-                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s);
-                """
-                cursor.execute(insert_query, (cev_ip, cev_host, cev_os, cev_protocol, cev_port, cev_service, cev_product,
-                                              'No CVEs Found', 'Scan Completed with No CVEs', cur_date))
+                # if no cevs are found just input that into db
+                elif not cve_found:
+                    insert_query = """
+                        INSERT INTO vulscan_data (ip, host, os, protocol, port, service, product, id, title, scan_date)
+                        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s);
+                    """
+                    cursor.execute(insert_query, (cev_ip, cev_host, cev_os, cev_protocol, cev_port, cev_service, cev_product,
+                                                'No CVEs Found', 'Scan Completed with No CVEs', cur_date))
 
             conn.commit()
     print("Done...")
