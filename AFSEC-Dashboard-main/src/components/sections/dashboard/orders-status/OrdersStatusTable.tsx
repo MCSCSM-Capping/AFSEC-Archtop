@@ -28,6 +28,16 @@ const CVETable = ({ searchText }: OrdersStatusTableProps) => {
   const [rows, setRows] = useState(scannerData);
   const [rowModesModel, setRowModesModel] = useState<GridRowModesModel>({});
 
+  // Dynamically updates the table
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRows([...scannerData]); 
+      console.log("Table refreshed");
+    }, 300000); 
+
+    return () => clearInterval(interval);
+  }, []);
+
   useEffect(() => {
     apiRef.current.setQuickFilterValues(searchText.split(/\b\W+\b/).filter((word) => word !== ''));
   }, [searchText]);
