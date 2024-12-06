@@ -24,7 +24,6 @@ const useScannerData = (): GridRowsProp => {
   return data;
 };
 
-
 // Creating each card
 const TopCards = () => {
   // Obtaining scannerData
@@ -35,13 +34,49 @@ const TopCards = () => {
   let ipsScanned = 0;
   let openPorts = 0;
   const cvesDetected = data.length;
-  // const cvePercentage = 0;
+
+  // Today's date
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = String(today.getMonth() + 1).padStart(2, '0');
+  const day = String(today.getDate()).padStart(2, '0');
+  const todayScan = month + '/' + day + '/' + year;
+
+  // Yesterday's date
+  const yesterday = new Date();
+  yesterday.setDate(yesterday.getDate() - 1);
+  const yesterdayYear = yesterday.getFullYear();
+  const yesterdayMonth = String(yesterday.getMonth() + 1).padStart(2, '0');
+  const yesterdayDay = String(yesterday.getDate()).padStart(2, '0');
+  const yesterdayScan = yesterdayMonth + '/' + yesterdayDay + '/' + yesterdayYear;
+
+  // Arrays to track statistics
+  const todayIPs: Array<object> = [];
+  const yesterdayIPs: Array<object> = [];
+
+  const todayPorts: Array<object> = [];
+  const yesterdayPorts: Array<object> = [];
+
+  const todayCVEs: Array<object> = [];
+  const yesterdayCVEs: Array<object> = [];
 
   // Map to track unique ip's and ports
   const ipMap = new Map<string, Set<number>>(); 
   
+  // Find new ip's and ports
+  // Also finds their dates for the % rate
   for (let i = 0; i < data.length; i++) {
     const item = data[i];
+
+    // Date of the item
+    const itemDate = new Date(item.scan_date);
+    const formattedDate = [
+      String(itemDate.getMonth() + 1).padStart(2, '0'),
+      String(itemDate.getDate()).padStart(2, '0'),
+      itemDate.getFullYear(),           
+    ].join('/'); 
+
+
     if (item && item.scan_source) {
       // Split the IP and the port
       const [ip, portString] = item.scan_source.split(" : ");
@@ -50,9 +85,16 @@ const TopCards = () => {
   
       // If the IP is not in the map, add it with a new Set for ports
       if (!ipMap.has(ip)) {
-        console.log("new ip: " + ip);
         ipMap.set(ip, new Set());
         ipsScanned++;
+
+        // Add to the ips date array for statistics
+        if (formattedDate === todayScan){
+          todayIPs.push(item);
+        }
+        if (formattedDate === yesterdayScan){
+          yesterdayIPs.push(item);
+        }
       }
   
       // Deal with ports if they exist
@@ -63,35 +105,90 @@ const TopCards = () => {
         
         // If the port is new for this IP, add it
         if (!ports.has(port)) {
-          console.log("new port:" + port);
           ports.add(port);
           openPorts++;
+          
+          // Add to the ports date array for statistics
+          if (formattedDate === todayScan){
+            todayPorts.push(item);
+          }
+          if (formattedDate === yesterdayScan){
+            yesterdayPorts.push(item);
+          }
         }
       }
     }
   }
 
-  // Initalizing previous values 
-  const [ipsScanned_PREV, setIpsScanned_PREV] = useState(0);
-  const [openPorts_PREV, setOpenPorts_PREV] = useState(0);
-  const [cvesDetected_PREV, setCvesDetected_PREV] = useState(0);
+  // Getting the scanned data from yesterday and also today's current data
+  for (let i = 0; i < data.length; i++){
+    const item = data[i];
+    const itemDate = new Date(item.scan_date);
 
-  console.log(ipsScanned_PREV);
-  console.log(openPorts_PREV);
-  console.log(cvesDetected_PREV);
+    const formattedDate = [
+      String(itemDate.getMonth() + 1).padStart(2, '0'),
+      String(itemDate.getDate()).padStart(2, '0'),
+      itemDate.getFullYear(),           
+    ].join('/'); 
 
-  // Calculate rates
-  const ipsScanned_RATE = ((ipsScanned - ipsScanned_PREV) / ipsScanned_PREV) * 100;
-  const openPorts_RATE = ((openPorts - openPorts_PREV) / openPorts_PREV) * 100;
-  const cvesDetected_RATE = ((cvesDetected - cvesDetected_PREV) / cvesDetected_PREV) * 100;
+    if (formattedDate === todayScan){
+      todayCVEs.push(item);
+    }
+    if (formattedDate === yesterdayScan){
+      yesterdayCVEs.push(item);
+    }
+  }
 
-  // Update previous values
-  useEffect(() => {
-    setIpsScanned_PREV(ipsScanned);
-    setOpenPorts_PREV(openPorts);
-    setCvesDetected_PREV(cvesDetected);
-  }, [ipsScanned, openPorts, cvesDetected]);
-  
+  // So we don't get undefined values
+  // IP's scanned rate
+  let ipsScanned_RATE;
+  if(yesterdayIPs.length === 0){
+    ipsScanned_RATE = 0;
+  }
+  else{
+    ipsScanned_RATE = ((todayIPs.length - yesterdayIPs.length) / yesterdayIPs.length) * 100;
+  }
+
+  // Open Ports rate
+  let openPorts_RATE;
+  if(yesterdayPorts.length === 0){
+    openPorts_RATE = 0;
+  }
+  else{
+    openPorts_RATE = ((todayPorts.length - yesterdayPorts.length) / yesterdayPorts.length) * 100;
+  }
+
+  // Detected CVEs rate
+  let cvesDetected_RATE;
+  if(yesterdayCVEs.length === 0){
+    cvesDetected_RATE = 0;
+  }
+  else{
+    cvesDetected_RATE = ((todayCVEs.length - yesterdayCVEs.length) / yesterdayCVEs.length) * 100;
+  }
+
+  // Changing rate visual on cards
+  let upRateIPs = true;
+  let upRatePorts = true;
+  let upRateCVEs = true;
+  if(ipsScanned_RATE < 0){
+    upRateIPs = false;
+  }
+  if(ipsScanned_RATE > 0 ){
+    upRateIPs = true;
+  }
+  if(openPorts_RATE < 0 ){
+    upRatePorts = false;
+  }
+  if(openPorts_RATE > 0 ){
+    upRatePorts = true;
+  }
+  if(cvesDetected_RATE < 0 ){
+    upRateCVEs = false;
+  }
+  if(cvesDetected_RATE > 0 ){
+    upRateCVEs = true;
+  }
 
   // Statistics at the top of the table
   const cardsData = [
@@ -101,7 +198,7 @@ const TopCards = () => {
       title: 'IPs Scanned',
       value: ipsScanned,
       rate: ipsScanned_RATE.toString() + '%',
-      isUp: true,
+      isUp: upRateIPs,
       icon: 'mingcute:world-2-fill',
     },
     // Open ports found
@@ -110,7 +207,7 @@ const TopCards = () => {
       title: 'Open Ports',
       value: openPorts,
       rate: openPorts_RATE.toString() + '%',
-      isUp: false,
+      isUp: upRatePorts,
       icon: 'mingcute:target-fill',
     },
     // CVEs detected
@@ -119,18 +216,9 @@ const TopCards = () => {
       title: 'CVEs Detected',
       value: cvesDetected,
       rate: cvesDetected_RATE.toString() + '%',
-      isUp: true,
+      isUp: upRateCVEs,
       icon: 'mingcute:report-fill',
     },
-    // CVE percentage
-    // {
-    //   id: 4,
-    //   title: 'CVE Percentage',
-    //   value: cvePercentage,
-    //   rate: cvesDetected_RATE.toString() + '%',
-    //   isUp: true,
-    //   icon: 'mingcute:heartbeat-fill',
-    // },
   ];
 
   return (

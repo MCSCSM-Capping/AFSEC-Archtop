@@ -32,7 +32,6 @@ const CVETable = ({ searchText }: OrdersStatusTableProps) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setRows([...scannerData]); 
-      console.log("Table refreshed");
     }, 300000); 
 
     return () => clearInterval(interval);
