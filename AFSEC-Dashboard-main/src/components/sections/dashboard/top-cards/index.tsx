@@ -67,7 +67,7 @@ const TopCards = () => {
   // Also finds their dates for the % rate
   for (let i = 0; i < data.length; i++) {
     const item = data[i];
-
+    //console.log("item: " + data[i]);
     // Date of the item
     const itemDate = new Date(item.scan_date);
     const formattedDate = [
@@ -75,7 +75,6 @@ const TopCards = () => {
       String(itemDate.getDate()).padStart(2, '0'),
       itemDate.getFullYear(),           
     ].join('/'); 
-
 
     if (item && item.scan_source) {
       // Split the IP and the port
@@ -139,14 +138,20 @@ const TopCards = () => {
     }
   }
 
+  // New today values to compare to yesterday's values
+  const newTodayIPs = todayIPs.length + yesterdayIPs.length;
+  const newTodayPorts = todayPorts.length + yesterdayPorts.length;
+  const newTodayCVEs = todayCVEs.length + yesterdayCVEs.length;
+
   // So we don't get undefined values
   // IP's scanned rate
   let ipsScanned_RATE;
+
   if(yesterdayIPs.length === 0){
     ipsScanned_RATE = 0;
   }
   else{
-    ipsScanned_RATE = ((todayIPs.length - yesterdayIPs.length) / yesterdayIPs.length) * 100;
+    ipsScanned_RATE = ((newTodayIPs - yesterdayIPs.length) / yesterdayIPs.length) * 100;
   }
 
   // Open Ports rate
@@ -155,7 +160,7 @@ const TopCards = () => {
     openPorts_RATE = 0;
   }
   else{
-    openPorts_RATE = ((todayPorts.length - yesterdayPorts.length) / yesterdayPorts.length) * 100;
+    openPorts_RATE = ((newTodayPorts - yesterdayPorts.length) / yesterdayPorts.length) * 100;
   }
 
   // Detected CVEs rate
@@ -164,7 +169,7 @@ const TopCards = () => {
     cvesDetected_RATE = 0;
   }
   else{
-    cvesDetected_RATE = ((todayCVEs.length - yesterdayCVEs.length) / yesterdayCVEs.length) * 100;
+    cvesDetected_RATE = ((newTodayCVEs - yesterdayCVEs.length) / yesterdayCVEs.length) * 100;
   }
 
   // Changing rate visual on cards
