@@ -1,6 +1,6 @@
 import Grid from '@mui/material/Grid';
 import TopCards from 'components/sections/dashboard/top-cards';
-import OrdersStatus from 'components/sections/dashboard/orders-status';
+import CVEsTable from 'components/sections/dashboard/cve-table';
 
 const Detail = () => {
   return (
@@ -10,7 +10,7 @@ const Detail = () => {
       </Grid>
 
       <Grid item xs={12}>
-        <OrdersStatus />
+        <CVEsTable />
       </Grid>
     </Grid>
   );

@@ -1,6 +1,6 @@
 import Grid from '@mui/material/Grid';
 import TopCards from 'components/sections/dashboard/top-cards';
-import OrdersStatus from 'components/sections/dashboard/orders-status';
+import OrdersStatus from 'components/sections/dashboard/cve-table';
 
 const Detail = () => {
   return (
