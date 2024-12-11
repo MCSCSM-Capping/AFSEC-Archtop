@@ -37,7 +37,7 @@ while read -r ip; do
             end_ip="255.255"
         elif [[ "$cidr" == "24" ]]; then
             # a.b.c.0 - a.b.c.255
-            end_ip="$255"
+            end_ip="255"
         else
             echo unsupported range...
         fi
