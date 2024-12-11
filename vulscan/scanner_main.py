@@ -40,11 +40,11 @@ def main():
         # either vulscan or spiderfoot
         scanner = "Vulscan"
         # vulscan: ip + port
-        scan_source = row[0] + " : " + row[4]
+        scan_source = str(row[0]) + " : " + str(row[4])
         # vulscan: scan_date
         scan_date = row[9]
         # vulscan: host + os + protocol + service + product + id + title
-        scan_info = row[1] + " : " + row[2] + " : " + row[3] + " : " + row[5] + " : " + row[6] + " : " + row[7] +  " : " + row[8]
+        scan_info = str(row[1]) + " : " + str(row[2]) + " : " + str(row[3]) + " : " + str(row[5]) + " : " + str(row[6]) + " : " + str(row[7]) +  " : " + str(row[8])
 
         insert_query = """INSERT INTO main_table (scanner, scan_source, scan_date, scan_info) VALUES (%s, %s, %s, %s);"""
 
