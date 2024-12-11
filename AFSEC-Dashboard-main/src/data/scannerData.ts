@@ -25,26 +25,14 @@ async function apiCall(){
 
 function parsing(index:number, data:string): string {
   let parse = "";
-  const regex = /:/g;
+  const data_array = data.split(":");
 
-  const instance = index; 
-  let counter = 0; 
+  parse = data_array[index].trim();
 
-  for (const match of data.matchAll(regex)) {
-      counter++;
-      if (counter === instance) {
-          const start = match.index + 1; 
-          const end = data.indexOf(":", start); 
-          parse = data.substring(start, end); 
-          break; 
-      }
+  if(parse === '' || parse === null || parse == null){
+    parse = "N/A";
   }
-  
-  console.log(parse)  
-  if(parse === ''|| parse === " "){
-    parse = "N/A"
-    console.log(parse)
-  }
+
   return parse;
 }
 
@@ -62,11 +50,11 @@ function data2Grid(data: dataInterface[]){
     scanner: item.scanner,
     scan_source: item.scan_source,
     scan_date: new Date(item.scan_date),
-    protocol: parsing(1, item.scan_info),
-    service: parsing(2, item.scan_info),
-    product: parsing(3, item.scan_info),
-    cve: parsing(4, item.scan_info),
-    title: parsing(5, item.scan_info),
+    protocol: parsing(2, item.scan_info),
+    service: parsing(3, item.scan_info),
+    product: parsing(4, item.scan_info),
+    cve: parsing(5, item.scan_info),
+    title: parsing(6, item.scan_info),
     scan_info: item.scan_info,
 
     // below is not added in yet but these should be ideally mapped as well
