@@ -57,7 +57,7 @@ def main():
     conn = psycopg2.connect(
         database=db,
         user=user,
-        password="capping2024",
+        password="(password for user postgres's postgres password)",
         host="localhost",
         port="5432"
     )

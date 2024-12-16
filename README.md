@@ -73,7 +73,7 @@ psql
 
 ## Set user postgres's password
 ```bash
-ALTER USER postgres PASSWORD 'capping2024';
+ALTER USER postgres PASSWORD '(set to desired password)';
 ```
 
 ## Quit out of Postgres
